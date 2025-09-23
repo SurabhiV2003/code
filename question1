@@ -1,0 +1,72 @@
+Single File Programming Question
+Matrix Rotation Using Inheritance
+
+
+
+Write a Java program to rotate a matrix n times in both clockwise and anti-clockwise directions using inheritance.
+
+
+
+Question Instructions:
+
+
+
+Create a base class named Clock.
+
+Extend the Clock class with two subclasses: Clockwise and Anticlockwise.
+
+Both subclasses should contain a method rotate() that performs the respective rotation on the matrix.
+
+Create a driver class named Main to handle input and output operations.
+
+Input format :
+The first line contains the number of rows.
+The second line contains the number of columns.
+The following lines contain the matrix as input rows and columns with space as a separator between each item in the matrix.
+Then the following line contains the number of rotations to be performed.
+Output format :
+Print "Clockwise" followed by the matrix after performing the specified number of clockwise rotations.
+Print "Anti clockwise" followed by the matrix after performing the specified number of anti-clockwise rotations.
+Code constraints :
+0 < Row <=10
+
+0 < Column <=10
+
+0 < Number Of Rotations <=10
+
+Sample test cases :
+Input 1 :
+3
+3
+1 2 3
+4 5 6
+7 8 9
+1
+Output 1 :
+Clockwise 
+4 1 2 
+7 5 3 
+8 9 6 
+Anti clockwise 
+2 3 6 
+1 5 9 
+4 7 8 
+Input 2 :
+4
+4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+3
+Output 2 :
+Clockwise 
+13 9 5 1 
+14 7 11 2 
+15 6 10 3 
+16 12 8 4 
+Anti clockwise 
+4 8 12 16 
+3 10 6 15 
+2 11 7 14 
+1 5 9 13 
