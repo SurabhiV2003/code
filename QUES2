@@ -1,0 +1,86 @@
+Movie Rating Classification
+
+
+
+Description:
+
+
+
+Implement a Java class 'MovieRater' to handle movie details and classification based on ratings.
+
+
+
+Attributes:
+
+
+
+int year: Stores the year of release of a movie.
+String title: Stores the title of the movie.
+float rating: Stores the popularity rating of the movie. (Minimum rating = 0.0 and maximum rating = 5.0)
+
+
+Methods:
+
+
+
+Default constructor: Initializes numeric data members to 0 and string data member to an empty string.
+accept(): Reads the value of the year, title, and rating from the console.
+display(): Displays the title of the movie and a message based on the rating.
+
+
+Rating Message:
+
+
+
+0.0 to 2.0: Flop
+2.1 to 3.4: Semi-hit
+3.5 to 4.5: Hit
+4.6 to 5.0: Super Hit
+Input format :
+The first line of the input consists of the year in which the movie was released.
+The second line of the input consists of the movie title.
+The third line consists of the rating.
+Output format :
+The first line of the output prints the movie title.
+The second line displays the message based on the table.
+If the rating provided is outside the range of 0.0 to 5.0, the message "Rating should be between 0.0 and 5.0" should be displayed.
+
+
+Refer to the sample output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+2004
+abc
+2.0
+Output 1 :
+abc
+Flop
+Input 2 :
+2008
+xyz
+3.2
+Output 2 :
+xyz
+Semi-hit
+Input 3 :
+2016
+abc
+4.2
+Output 3 :
+abc
+Hit
+Input 4 :
+2018
+xyz
+5.0
+Output 4 :
+xyz
+Super Hit
+Input 5 :
+2020
+aaa
+6.0
+Output 5 :
+aaa
+Rating should be betwee
