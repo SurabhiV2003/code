@@ -1,0 +1,59 @@
+public interface Measurable {
+    double getMeasure();
+}
+
+public class Coin implements Measurable {
+    private double value;
+    private String name;
+
+    public Coin(double value, String name) {
+        this.value = value;
+        this.name = name;
+    }
+
+    @Override
+    public double getMeasure() {
+        return value;
+    }
+}
+
+public class DataSet {
+    private java.util.ArrayList<Measurable> items;
+
+    public DataSet() {
+        items = new java.util.ArrayList<>();
+    }
+
+    public void add(Measurable item) {
+        items.add(item);
+    }
+
+    public double getAverage() {
+        double sum = 0;
+        for (Measurable item : items) {
+            sum += item.getMeasure();
+        }
+        return (items.size() > 0) ? sum / items.size() : 0;
+    }
+}
+
+public class BankAccount implements Measurable {
+    private double balance;
+
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    @Override
+    public double getMeasure() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        balance -= amount;
+    }
+}
