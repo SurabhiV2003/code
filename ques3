@@ -1,0 +1,73 @@
+Vehicle Interface and Car Implementation
+
+
+
+Design a Java program to model vehicles using an interface and a concrete class.
+
+
+
+Task:
+
+Define an interface named 'Vehicle' that represents the behaviour of a vehicle.
+Create a class named 'Car' that implements the 'Vehicle' interface.
+
+
+Vehicle: Define an interface representing the behaviour of a vehicle following methods are given below:
+
+
+
+
+
+Create a class 'Car' with the following attributes and methods:
+
+
+
+speed (int): Represents the current speed of the car.
+gear (int): Represents the current gear of the car.
+brake (int): Represents the brake applied to the car.
+
+
+Implement the 'Vehicle' interface in the 'Car' class.
+
+
+
+Define the method printState() to display the current state of the car, including its speed and gear.
+
+
+
+The speed is calculated by subtracting the brake applied from the initial speed. Ensure the speed does not drop below zero.
+
+
+
+The gear remains unchanged from the input.
+
+Input format :
+The first line of input is an integer representing the speed of the car.
+The second line of input is an integer representing the gear of the car.
+The third line of input is an integer representing the brake applied to the car.
+Output format :
+The output should print the current state of the car in the following format:
+
+Car present state:
+
+speed: <calculated_speed> gear: <current_gear>
+
+
+
+Refer to the sample output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+54
+3
+23
+Output 1 :
+Car present state:
+speed: 31 gear: 3
+Input 2 :
+60
+4
+20
+Output 2 :
+Car present state:
+speed: 40 gear: 4
