@@ -1,0 +1,1910 @@
+
+					Collections(List, Set)
+===============================================================================================================================
+
+1.
+import java.util.*;
+class Test {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        list.add(1, 30);
+        System.out.println(list);
+    }
+}
+
+Options:
+A. [10, 20, 30]
+B. [10, 30, 20]
+C. [30, 10, 20]
+D. Compile-time error
+
+Answer: B. [10, 30, 20]
+
+Explanation:
+add(index, element) inserts at the given index. list.add(1, 30) → inserts 30 at index 1.
+
+
+
+2.
+ArrayList<String> list = new ArrayList<>();
+list.add("A");
+list.add("B");
+list.add("C");
+list.remove(1);
+System.out.println(list);
+
+Options:
+A. [A, B]
+B. [A, C]
+C. [B, C]
+D. Compile-time error
+
+Answer: B. [A, C]
+
+Explanation:
+Removing index 1 removes "B".
+
+
+
+Q3.
+ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+list.removeIf(n -> n % 2 == 0);
+System.out.println(list);
+
+Options:
+A. [2,4]
+B. [1,3,5]
+C. [1,2,3,4,5]
+D. []
+
+Answer: B. [1,3,5]
+
+Explanation:
+removeIf() removes elements matching condition. Removes evens.
+
+
+
+4.
+LinkedList<String> list = new LinkedList<>();
+list.add("X");
+list.addFirst("Y");
+list.addLast("Z");
+System.out.println(list);
+
+Options:
+A. [X, Y, Z]
+B. [Y, X, Z]
+C. [Z, Y, X]
+D. Compile error
+
+Answer: B. [Y, X, Z]
+Explanation:
+addFirst adds at head, addLast adds at tail.
+
+
+
+5.
+LinkedList<Integer> list = new LinkedList<>();
+list.push(10);
+list.push(20);
+list.push(30);
+System.out.println(list.pop());
+
+Options:
+A. 10
+B. 20
+C. 30
+D. Exception
+
+Answer: C. 30
+Explanation:
+push() adds to head, pop() removes from head.
+
+
+
+Q6.
+ArrayList<String> list = new ArrayList<>();
+list.add("Java");
+list.add("Python");
+list.set(1,"C++");
+System.out.println(list);
+
+Options:
+A. [Java, Python]
+B. [Java, C++]
+C. [C++, Java]
+D. Error
+
+Answer: B. [Java, C++]
+
+Explanation:
+set(index, value) replaces element at given index.
+
+
+
+7.
+ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3));
+System.out.println(list.contains(2));
+
+Options:
+A. true
+B. false
+C. Compile error
+D. Exception
+
+Answer: A. true
+
+Explanation:
+contains() checks if element exists.
+
+
+8.
+LinkedList<String> list = new LinkedList<>();
+list.add("A");
+list.add("B");
+list.add("C");
+System.out.println(list.peek());
+
+Options:
+A. A
+B. B
+C. null
+D. Exception
+
+Answer: A. A
+
+Explanation:
+peek() returns head without removing it.
+
+
+
+9.
+ArrayList<String> list = new ArrayList<>(Arrays.asList("a","b","c"));
+for(String s : list){
+    if(s.equals("b")) list.remove(s);
+}
+System.out.println(list);
+
+Options:
+A. [a, c]
+B. [a]
+C. [c]
+D. ConcurrentModificationException
+
+Answer: D. ConcurrentModificationException
+
+Explanation:
+Removing inside enhanced for-loop throws exception.
+
+
+
+10.
+ArrayList<Integer> list = new ArrayList<>(Arrays.asList(10,20,30,40));
+List<Integer> sub = list.subList(1,3);
+System.out.println(sub);
+
+Options:
+A. [10,20]
+B. [20,30]
+C. [30,40]
+D. Error
+
+Answer: B. [20,30]
+
+Explanation:
+subList(start, end) → start inclusive, end exclusive.
+
+
+
+11.
+LinkedList<Integer> list = new LinkedList<>();
+list.add(5);
+list.add(10);
+System.out.println(list.offer(20));
+
+Options:
+A. true
+B. false
+C. 20
+D. Exception
+
+Answer: A. true
+
+Explanation:
+offer() inserts element and returns true.
+
+
+12.
+ArrayList<Integer> list = new ArrayList<>();
+list.ensureCapacity(50);
+System.out.println(list.size());
+
+Options:
+A. 0
+B. 50
+C. null
+D. Exception
+
+Answer: A. 0
+
+Explanation:
+ensureCapacity sets capacity but not size.
+
+
+13.
+LinkedList<String> list = new LinkedList<>();
+list.add("A");
+list.add("B");
+System.out.println(list.remove());
+
+Options:
+A. A
+B. B
+C. null
+D. Exception
+
+Answer: A. A
+
+Explanation:
+remove() removes head element.
+
+
+
+14.
+ArrayList<Integer> list = new ArrayList<>(Arrays.asList(5,10,15,20));
+list.replaceAll(n -> n*2);
+System.out.println(list);
+
+Options:
+A. [5,10,15,20]
+B. [10,20,30,40]
+C. [2,4,6,8]
+D. Exception
+
+Answer: B. [10,20,30,40]
+
+Explanation:
+replaceAll(UnaryOperator) applies function to each element.
+
+
+
+15.
+LinkedList<String> list = new LinkedList<>();
+list.add("X");
+list.add("Y");
+System.out.println(list.element());
+
+Options:
+A. X
+B. Y
+C. null
+D. Exception
+
+Answer: A. X
+
+Explanation:
+element() returns but doesn’t remove head, throws exception if empty.
+
+
+
+16.
+ArrayList<String> list = new ArrayList<>();
+list.add(null);
+list.add("A");
+System.out.println(list);
+
+Options:
+A. [null, A]
+B. [A, null]
+C. [A]
+D. Exception
+
+Answer: A. [null, A]
+
+Explanation:
+ArrayList allows null values.
+
+
+
+17.
+LinkedList<Integer> list = new LinkedList<>();
+System.out.println(list.poll());
+
+Options:
+A. null
+B. 0
+C. Exception
+D. Compile error
+
+Answer: A. null
+
+Explanation:
+poll() retrieves and removes head or returns null if empty.
+
+
+
+18.
+ArrayList<String> list = new ArrayList<>(Arrays.asList("one","two","three"));
+Iterator<String> it = list.iterator();
+while(it.hasNext()){
+    if(it.next().equals("two")) it.remove();
+}
+System.out.println(list);
+
+Options:
+A. [one, three]
+B. [one, two]
+C. [two, three]
+D. Exception
+
+Answer: A. [one, three]
+
+Explanation:
+Iterator.remove() safely removes while iterating.
+
+
+
+19.
+ArrayList<Integer> list = new ArrayList<>();
+list.add(1);
+list.add(2);
+list.add(3);
+list.clear();
+System.out.println(list.isEmpty());
+
+Options:
+A. true
+B. false
+C. Exception
+D. null
+
+Answer: A. true
+
+Explanation:
+clear() removes all elements.
+
+
+
+20.
+LinkedList<Integer> list = new LinkedList<>(Arrays.asList(1,2,3));
+list.add(1, 10);
+System.out.println(list);
+
+Options:
+A. [1,2,3,10]
+B. [1,10,2,3]
+C. [10,1,2,3]
+D. Exception
+
+Answer: B. [1,10,2,3]
+
+Explanation:
+add(index, element) inserts element at given index.
+
+
+
+1.
+import java.util.*;
+class Test {
+    public static void main(String[] args) {
+        HashSet<String> set = new HashSet<>();
+        set.add("Java");
+        set.add("Python");
+        set.add("Java");
+        System.out.println(set.size());
+    }
+}
+
+Options:
+A. 3
+B. 2
+C. 1
+D. Compile-time error
+
+Answer: B. 2
+
+Explanation:
+HashSet does not allow duplicates. "Java" is added twice → only counted once.
+
+
+
+2.
+LinkedHashSet<String> set = new LinkedHashSet<>();
+set.add("A");
+set.add("B");
+set.add("C");
+set.add("B");
+System.out.println(set);
+
+Options:
+A. [A, B, C, B]
+B. [A, B, C]
+C. [B, A, C]
+D. [C, B, A]
+
+Answer: B. [A, B, C]
+
+Explanation:
+LinkedHashSet maintains insertion order and no duplicates.
+
+
+
+3.
+HashSet<Integer> set = new HashSet<>(Arrays.asList(10,20,30,10));
+System.out.println(set.contains(20));
+
+Options:
+A. true
+B. false
+C. Compile error
+D. Exception
+
+Answer: A. true
+
+Explanation:
+contains() checks if element exists.
+
+
+
+4.
+LinkedHashSet<Integer> set = new LinkedHashSet<>();
+set.add(5);
+set.add(10);
+set.add(15);
+for(Integer i : set){
+    if(i == 10) set.remove(i);
+}
+System.out.println(set);
+
+Options:
+A. [5,15]
+B. [5,10,15]
+C. Exception
+D. [10,5,15]
+
+Answer: C. Exception
+
+Explanation:
+Removing inside enhanced for-loop → ConcurrentModificationException.
+
+
+
+5.
+HashSet<String> set = new HashSet<>();
+set.add("X");
+set.add("Y");
+set.add("Z");
+System.out.println(set.isEmpty());
+
+Options:
+A. true
+B. false
+C. null
+D. Exception
+
+Answer: B. false
+
+Explanation:
+Set is not empty after adding elements.
+
+
+
+6.
+LinkedHashSet<String> set = new LinkedHashSet<>();
+set.add("P");
+set.add("Q");
+set.add("R");
+set.add("S");
+set.clear();
+System.out.println(set.isEmpty());
+
+Options:
+A. true
+B. false
+C. null
+D. Exception
+
+Answer: A. true
+
+Explanation:
+clear() removes all elements → set becomes empty.
+
+
+
+7.
+HashSet<Integer> set1 = new HashSet<>(Arrays.asList(1,2,3));
+HashSet<Integer> set2 = new HashSet<>(Arrays.asList(3,4,5));
+set1.addAll(set2);
+System.out.println(set1);
+
+Options:
+A. [1,2,3,4,5]
+B. [1,2,3,3,4,5]
+C. [3,4,5]
+D. Compile error
+
+Answer: A. [1,2,3,4,5]
+
+Explanation:
+addAll() merges two sets; duplicates are ignored.
+
+
+
+8.
+LinkedHashSet<Integer> set = new LinkedHashSet<>(Arrays.asList(1,2,3,4));
+System.out.println(set.remove(3));
+System.out.println(set);
+
+Options:
+A. true, [1,2,4]
+B. false, [1,2,3,4]
+C. Exception
+D. true, [3,1,2,4]
+
+Answer: A. true, [1,2,4]
+
+Explanation:
+remove() returns true if element existed and removes it.
+
+
+
+9.
+HashSet<String> set = new HashSet<>();
+set.add("A");
+set.add("B");
+set.add(null);
+System.out.println(set.contains(null));
+
+Options:
+A. true
+B. false
+C. Exception
+D. Compile error
+
+Answer: A. true
+
+Explanation:
+HashSet allows one null value.
+
+
+
+10.
+LinkedHashSet<Integer> set = new LinkedHashSet<>(Arrays.asList(10,20,30));
+Iterator<Integer> it = set.iterator();
+while(it.hasNext()){
+    Integer n = it.next();
+    if(n==20) it.remove();
+}
+System.out.println(set);
+
+Options:
+A. [10,30]
+B. [10,20,30]
+C. Exception
+D. [20]
+
+Answer: A. [10,30]
+
+Explanation:
+Safe removal using Iterator.remove().
+
+
+
+11.
+HashSet<String> set = new HashSet<>();
+set.add("A");
+set.add("B");
+set.add("C");
+set.add("C");
+System.out.println(set.size());
+
+Options:
+A. 4
+B. 3
+C. 2
+D. 1
+
+Answer: B. 3
+
+Explanation:
+Duplicates not allowed → "C" added only once.
+
+
+
+12.
+LinkedHashSet<String> set = new LinkedHashSet<>();
+set.add("A");
+set.add("B");
+set.add("C");
+set.add("D");
+for(String s : set){
+    System.out.print(s + " ");
+}
+
+Options:
+A. A B C D
+B. D C B A
+C. A C B D
+D. Random
+
+Answer: A. A B C D
+
+Explanation:
+LinkedHashSet maintains insertion order.
+
+
+
+13.
+HashSet<Integer> set = new HashSet<>(Arrays.asList(1,2,3,4));
+System.out.println(set.pollFirst());
+
+Options:
+A. 1
+B. null
+C. Exception
+D. 4
+
+Answer: C. Exception
+
+Explanation:
+pollFirst() does not exist in HashSet; only in TreeSet or LinkedHashSet via Deque.
+
+
+
+14.
+LinkedHashSet<Integer> set = new LinkedHashSet<>(Arrays.asList(1,2,3,4));
+set.retainAll(Arrays.asList(2,4,6));
+System.out.println(set);
+
+Options:
+A. [2,4]
+B. [1,2,3,4]
+C. [6]
+D. []
+
+Answer: A. [2,4]
+
+Explanation:
+retainAll() keeps only elements present in the given collection.
+
+
+
+15.
+HashSet<String> set = new HashSet<>();
+set.add("X");
+set.add("Y");
+set.add("Z");
+for(String s : set){
+    System.out.print(s + " ");
+}
+
+Options:
+A. X Y Z
+B. Z Y X
+C. Order is unpredictable
+D. Compile error
+
+Answer: C. Order is unpredictable
+
+Explanation:
+HashSet does not maintain insertion order.
+
+
+
+16.
+LinkedHashSet<String> set = new LinkedHashSet<>();
+set.add("A");
+set.add("B");
+set.add("C");
+set.add("D");
+System.out.println(set.size());
+
+Options:
+A. 4
+B. 3
+C. 2
+D. Exception
+
+Answer: A. 4
+
+Explanation:
+Four unique elements added.
+
+
+
+17.
+HashSet<Integer> set = new HashSet<>();
+set.add(5);
+set.add(10);
+set.add(15);
+System.out.println(set.remove(10));
+
+Options:
+A. true
+B. false
+C. 10
+D. Exception
+
+Answer: A. true
+
+Explanation:
+remove(element) returns true if element existed.
+
+
+
+18.
+LinkedHashSet<Integer> set = new LinkedHashSet<>(Arrays.asList(1,2,3));
+set.add(2);
+System.out.println(set);
+
+Options:
+A. [1,2,3,2]
+B. [1,2,3]
+C. [2,1,3]
+D. Exception
+
+Answer: B. [1,2,3]
+
+Explanation:
+Duplicate 2 ignored in LinkedHashSet.
+
+
+
+19.
+HashSet<String> set = new HashSet<>();
+set.add("Java");
+set.add("Python");
+set.add("C++");
+System.out.println(set.iterator().next());
+
+Options:
+A. Java
+B. Python
+C. C++
+D. Any element, order not guaranteed
+
+Answer: D. Any element, order not guaranteed
+
+Explanation:
+HashSet iterator returns elements in unpredictable order.
+
+
+
+20.
+LinkedHashSet<Integer> set = new LinkedHashSet<>(Arrays.asList(1,3,5,7));
+set.addAll(Arrays.asList(2,3,6));
+System.out.println(set);
+
+Options:
+A. [1,3,5,7,2,3,6]
+B. [1,3,5,7,2,6]
+C. [2,3,6,1,3,5,7]
+D. Exception
+
+Answer: B. [1,3,5,7,2,6]
+
+Explanation:
+addAll() adds only new elements, maintaining insertion order.
+
+
+
+1.
+import java.util.*;
+class Test {
+    public static void main(String[] args) {
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(10);
+        set.add(5);
+        set.add(20);
+        System.out.println(set);
+    }
+}
+
+Options:
+A. [10,5,20]
+B. [5,10,20]
+C. [20,10,5]
+D. Compile-time error
+
+Answer: B. [5,10,20]
+
+Explanation:
+TreeSet stores elements in natural ascending order by default.
+
+
+
+2.
+TreeSet<String> set = new TreeSet<>();
+set.add("Banana");
+set.add("Apple");
+set.add("Mango");
+System.out.println(set.first());
+
+Options:
+A. Banana
+B. Apple
+C. Mango
+D. Exception
+
+Answer: B. Apple
+
+Explanation:
+first() returns the smallest element according to natural ordering.
+
+
+
+3.
+TreeSet<Integer> set = new TreeSet<>(Arrays.asList(10,20,30));
+System.out.println(set.ceiling(15));
+
+Options:
+A. 10
+B. 20
+C. 15
+D. null
+
+Answer: B. 20
+
+Explanation:
+ceiling(e) returns the least element ≥ e.
+
+
+
+4.
+TreeSet<Integer> set = new TreeSet<>(Arrays.asList(1,2,3,4,5));
+System.out.println(set.floor(3));
+
+Options:
+A. 3
+B. 2
+C. 4
+D. null
+
+Answer: A. 3
+
+Explanation:
+floor(e) returns the greatest element ≤ e.
+
+
+
+5.
+TreeSet<Integer> set = new TreeSet<>();
+set.add(5);
+set.add(10);
+set.add(3);
+set.add(1);
+set.remove(3);
+System.out.println(set);
+
+Options:
+A. [5,10,3,1]
+B. [1,5,10]
+C. [1,3,5,10]
+D. Exception
+
+Answer: B. [1,5,10]
+
+Explanation:
+TreeSet maintains sorted order. Removing 3 → [1,5,10].
+
+
+
+6.
+TreeSet<String> set = new TreeSet<>(Arrays.asList("X","Y","Z"));
+set.add("A");
+System.out.println(set);
+
+Options:
+A. [A,X,Y,Z]
+B. [X,Y,Z,A]
+C. [X,A,Y,Z]
+D. Exception
+
+Answer: A. [A,X,Y,Z]
+
+Explanation:
+TreeSet sorts elements in natural order (alphabetically for Strings).
+
+
+
+7.
+TreeSet<Integer> set = new TreeSet<>(Arrays.asList(5,10,15));
+System.out.println(set.higher(10));
+
+Options:
+A. 5
+B. 10
+C. 15
+D. null
+
+Answer: C. 15
+
+Explanation:
+higher(e) returns the least element strictly greater than e.
+
+
+
+8.
+TreeSet<Integer> set = new TreeSet<>(Arrays.asList(5,10,15));
+System.out.println(set.lower(10));
+
+Options:
+A. 5
+B. 10
+C. 15
+D. null
+
+Answer: A. 5
+
+Explanation:
+
+lower(e) returns the greatest element strictly less than e.
+
+
+
+9.
+TreeSet<Integer> set = new TreeSet<>();
+set.add(10);
+set.add(null);
+
+Options:
+A. [10,null]
+B. Exception
+C. [null,10]
+D. [10]
+
+Answer: B. Exception
+
+Explanation:
+TreeSet does not allow null because sorting would throw NullPointerException.
+
+
+
+10.
+TreeSet<Integer> set = new TreeSet<>(Arrays.asList(1,2,3,4,5));
+System.out.println(set.descendingSet());
+
+Options:
+A. [1,2,3,4,5]
+B. [5,4,3,2,1]
+C. [2,3,4,5,1]
+D. Exception
+
+Answer: B. [5,4,3,2,1]
+
+Explanation:
+descendingSet() returns a reverse-order view of the TreeSet.
+
+
+
+
+
+						Map(HashMap, LinkedHashMap and TreeMap)
+===============================================================================================================================
+
+1. 
+Duplicate Key Behavior
+import java.util.*;
+class Test {
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "A");
+        map.put(2, "B");
+        map.put(1, "C");
+        System.out.println(map);
+    }
+}
+
+Options:
+A. {1=A, 2=B}
+B. {1=A, 2=B, 1=C}
+C. {1=C, 2=B}
+D. Compilation Error
+
+Answer: C. {1=C, 2=B}
+
+Explanation:
+HashMap does not allow duplicate keys.
+If a key already exists, the new value replaces the old value.
+
+
+
+2. 
+Null Keys
+HashMap<String, String> map = new HashMap<>();
+map.put(null, "Hello");
+map.put("Java", "World");
+map.put(null, "New");
+System.out.println(map);
+
+Options:
+A. {null=Hello, Java=World}
+B. {null=New, Java=World}
+C. {Java=World}
+D. NullPointerException
+
+Answer: B. {null=New, Java=World}
+
+Explanation:
+HashMap allows one null key.
+Latest value ("New") overwrites the previous value for null.
+
+
+
+3. 
+Order of Elements
+HashMap<Integer, String> map = new HashMap<>();
+map.put(10, "Ten");
+map.put(5, "Five");
+map.put(20, "Twenty");
+System.out.println(map);
+
+Options:
+A. {5=Five, 10=Ten, 20=Twenty}
+B. {10=Ten, 5=Five, 20=Twenty}
+C. {20=Twenty, 10=Ten, 5=Five}
+D. Order is not guaranteed
+
+Answer: D. Order is not guaranteed
+
+Explanation:
+HashMap does not maintain order (use LinkedHashMap if order matters).
+
+
+
+4. 
+Iteration
+HashMap<Integer, String> map = new HashMap<>();
+map.put(1, "One");
+map.put(2, "Two");
+map.put(3, "Three");
+
+for (Map.Entry<Integer,String> entry : map.entrySet()) {
+    if(entry.getKey() == 2) {
+        System.out.println(entry.getValue());
+    }
+}
+
+Options:
+A. One
+B. Two
+C. Three
+D. Nothing
+
+Answer: B. Two
+
+Explanation:
+Iterating entrySet(), printing value where key == 2.
+
+
+
+5. 
+Replace Method
+HashMap<Integer, String> map = new HashMap<>();
+map.put(1, "Apple");
+map.replace(1, "Banana");
+System.out.println(map);
+
+Options:
+A. {1=Apple}
+B. {1=Banana}
+C. {1=Apple, 1=Banana}
+D. NullPointerException
+
+Answer: B. {1=Banana}
+
+Explanation:
+replace(key,newValue) replaces value only if key exists.
+
+
+
+6. 
+computeIfAbsent
+HashMap<Integer, String> map = new HashMap<>();
+map.put(1, "One");
+map.computeIfAbsent(2, k -> "Two");
+map.computeIfAbsent(1, k -> "Updated");
+System.out.println(map);
+
+Options:
+A. {1=Updated, 2=Two}
+B. {1=One, 2=Two}
+C. {1=One}
+D. Exception
+
+Answer: B. {1=One, 2=Two}
+
+Explanation:
+computeIfAbsent adds mapping only if key is absent.
+
+
+
+7. 
+merge() Method
+HashMap<Integer, String> map = new HashMap<>();
+map.put(1, "A");
+map.merge(1, "B", (oldVal, newVal) -> oldVal + newVal);
+map.merge(2, "C", (oldVal, newVal) -> oldVal + newVal);
+System.out.println(map);
+
+Options:
+A. {1=AB, 2=C}
+B. {1=A, 2=C}
+C. {1=ABC}
+D. {1=A, 2=null}
+
+Answer: A. {1=AB, 2=C}
+
+Explanation:
+If key exists → merges with given function.
+If key absent → simply inserts new value.
+
+
+
+8. 
+remove() with Value
+HashMap<Integer, String> map = new HashMap<>();
+map.put(1, "One");
+map.put(2, "Two");
+map.remove(2, "Three");
+System.out.println(map);
+
+
+Options:
+A. {1=One}
+B. {1=One, 2=Two}
+C. {}
+D. Exception
+
+Answer: B. {1=One, 2=Two}
+
+Explanation:
+remove(key,value) removes entry only if key maps to given value.
+Since (2,"Three") not found → no removal.
+
+
+
+9. 
+Null Values
+HashMap<Integer, String> map = new HashMap<>();
+map.put(1, null);
+map.put(2, "Hello");
+System.out.println(map.size());
+
+Options:
+A. 0
+B. 1
+C. 2
+D. Exception
+
+Answer: C. 2
+
+Explanation:
+HashMap allows multiple null values.
+So both entries are valid → size = 2.
+
+
+
+10. 
+compute()
+HashMap<Integer, Integer> map = new HashMap<>();
+map.put(1, 10);
+map.compute(1, (k,v) -> v + 5);
+map.compute(2, (k,v) -> 20);
+System.out.println(map);
+
+Options:
+A. {1=15}
+B. {1=10, 2=20}
+C. {1=15, 2=20}
+D. Exception
+
+Answer: C. {1=15, 2=20}
+
+Explanation:
+compute() updates value for existing keys.
+If absent, it computes new value from scratch.
+
+
+
+Q1. 
+Insertion Order Preservation
+import java.util.*;
+class Test {
+    public static void main(String[] args) {
+        LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+        map.put(3, "C");
+        map.put(1, "A");
+        map.put(2, "B");
+        System.out.println(map);
+    }
+}
+
+Options:
+A. {3=C, 1=A, 2=B}
+B. {1=A, 2=B, 3=C}
+C. {2=B, 1=A, 3=C}
+D. Order is not guaranteed
+
+Answer: A. {3=C, 1=A, 2=B}
+
+Explanation:
+Unlike HashMap, LinkedHashMap maintains insertion order.
+
+
+
+2. 
+Duplicate Keys
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+map.put(1, "A");
+map.put(2, "B");
+map.put(1, "C");
+System.out.println(map);
+
+Options:
+A. {1=A, 2=B, 1=C}
+B. {1=C, 2=B}
+C. {2=B, 1=C}
+D. Error
+
+Answer: B. {1=C, 2=B}
+
+Explanation:
+Keys remain unique.
+Value "C" replaces old value "A" but order does not change.
+
+
+
+3. 
+Access Order
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>(16, 0.75f, true);
+map.put(1, "One");
+map.put(2, "Two");
+map.put(3, "Three");
+map.get(1);
+System.out.println(map);
+
+Options:
+A. {1=One, 2=Two, 3=Three}
+B. {2=Two, 3=Three, 1=One}
+C. {3=Three, 2=Two, 1=One}
+D. Random order
+
+Answer: B. {2=Two, 3=Three, 1=One}
+
+Explanation:
+Third parameter true enables access-order (LRU behavior).
+Accessed key (1) moves to the end.
+
+
+
+4. 
+Null Keys
+LinkedHashMap<String, String> map = new LinkedHashMap<>();
+map.put(null, "Hello");
+map.put("Java", "World");
+map.put(null, "New");
+System.out.println(map);
+
+Options:
+A. {null=Hello, Java=World}
+B. {null=New, Java=World}
+C. {Java=World}
+D. NullPointerException
+
+Answer: B. {null=New, Java=World}
+
+Explanation:
+LinkedHashMap allows one null key.
+New value replaces old value for null.
+
+
+
+5. 
+Iteration
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+map.put(1, "A");
+map.put(2, "B");
+map.put(3, "C");
+for (Map.Entry<Integer, String> e : map.entrySet()) {
+    if(e.getKey() == 2) {
+        System.out.println(e.getValue());
+    }
+}
+
+Options:
+A. A
+B. B
+C. C
+D. Nothing
+
+Answer: B. B
+
+Explanation:
+Iterates in insertion order and prints value of key 2 → "B".
+
+
+
+6. 
+Removal Order
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+map.put(1, "A");
+map.put(2, "B");
+map.put(3, "C");
+map.remove(2);
+System.out.println(map);
+
+Options:
+A. {1=A, 2=B, 3=C}
+B. {1=A, 3=C}
+C. {3=C, 1=A}
+D. Error
+
+Answer: B. {1=A, 3=C}
+
+Explanation:
+remove(2) deletes entry but insertion order of remaining keys is maintained.
+
+
+
+Q7. 
+ContainsKey vs ContainsValue
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+map.put(100, "Java");
+map.put(200, "Python");
+System.out.println(map.containsKey(100) + " " + map.containsValue("C++"));
+
+Options:
+A. true true
+B. true false
+C. false true
+D. false false
+
+Answer: B. true false
+
+Explanation:
+Key 100 exists.
+Value "C++" does not exist.
+
+
+
+8. 
+Overwriting in Access-Order
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>(16, 0.75f, true);
+map.put(1, "A");
+map.put(2, "B");
+map.put(3, "C");
+map.put(2, "BB");
+System.out.println(map);
+
+Options:
+A. {1=A, 2=BB, 3=C}
+B. {1=A, 3=C, 2=BB}
+C. {2=BB, 3=C, 1=A}
+D. Random order
+
+Answer: B. {1=A, 3=C, 2=BB}
+
+Explanation:
+Updating key (2) counts as an access in access-order mode.
+So key 2 moves to end.
+
+
+
+9. 
+Null Values
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+map.put(1, null);
+map.put(2, "Hello");
+map.put(3, null);
+System.out.println(map.size());
+
+
+Options:
+A. 1
+B. 2
+C. 3
+D. Exception
+
+Answer: C. 3
+
+Explanation:
+LinkedHashMap allows multiple null values.
+Size = 3.
+
+
+
+10. 
+Removing While Iterating
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+map.put(1, "A");
+map.put(2, "B");
+map.put(3, "C");
+
+Iterator<Integer> it = map.keySet().iterator();
+while(it.hasNext()) {
+    Integer k = it.next();
+    if(k == 2) it.remove();
+}
+System.out.println(map);
+
+Options:
+A. {1=A, 2=B, 3=C}
+B. {1=A, 3=C}
+C. ConcurrentModificationException
+D. {}
+
+Answer: B. {1=A, 3=C}
+
+Explanation:
+Using Iterator.remove() is safe.
+Removes key=2 during iteration.
+
+
+
+Q1. 
+Default Sorting Order
+import java.util.*;
+class Test {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> map = new TreeMap<>();
+        map.put(5, "E");
+        map.put(2, "B");
+        map.put(8, "H");
+        map.put(1, "A");
+        System.out.println(map);
+    }
+}
+
+
+Options:
+A. {5=E, 2=B, 8=H, 1=A}
+B. {1=A, 2=B, 5=E, 8=H}
+C. {8=H, 5=E, 2=B, 1=A}
+D. Random order
+
+Answer: B. {1=A, 2=B, 5=E, 8=H}
+
+Explanation:
+TreeMap stores keys in ascending order (natural ordering).
+
+
+
+2. 
+Null Keys
+TreeMap<String, String> map = new TreeMap<>();
+map.put(null, "Hello");
+map.put("Java", "World");
+System.out.println(map);
+
+
+Options:
+A. {null=Hello, Java=World}
+B. {Java=World}
+C. NullPointerException
+D. {}
+
+Answer: C. NullPointerException
+
+Explanation:
+TreeMap does not allow null keys because it needs to sort keys.
+
+
+
+3. 
+Comparator for Reverse Order
+TreeMap<Integer, String> map = new TreeMap<>(Comparator.reverseOrder());
+map.put(3, "C");
+map.put(1, "A");
+map.put(2, "B");
+System.out.println(map);
+
+Options:
+A. {1=A, 2=B, 3=C}
+B. {3=C, 2=B, 1=A}
+C. {2=B, 1=A, 3=C}
+D. Random order
+
+Answer: B. {3=C, 2=B, 1=A}
+
+Explanation:
+Custom comparator reverseOrder() makes TreeMap sort in descending order.
+
+
+
+4. 
+floorKey Example
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(10, "A");
+map.put(20, "B");
+map.put(30, "C");
+System.out.println(map.floorKey(25));
+
+Options:
+A. 10
+B. 20
+C. 25
+D. null
+
+Answer: B. 20
+
+Explanation:
+floorKey(25) returns the greatest key ≤ 25 → 20.
+
+
+
+5. 
+ceilingEntry Example
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(100, "X");
+map.put(200, "Y");
+map.put(300, "Z");
+System.out.println(map.ceilingEntry(150));
+
+
+Options:
+A. 100=X
+B. 200=Y
+C. 300=Z
+D. null
+
+Answer: B. 200=Y
+
+Explanation:
+ceilingEntry(150) returns the smallest entry ≥ 150 → 200=Y.
+
+
+
+6.
+Polling First Entry
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(5, "Five");
+map.put(2, "Two");
+map.put(8, "Eight");
+System.out.println(map.pollFirstEntry());
+System.out.println(map);
+
+Options:
+A. 5=Five and {2=Two, 8=Eight}
+B. 2=Two and {5=Five, 8=Eight}
+C. 8=Eight and {2=Two, 5=Five}
+D. Random order
+
+Answer: B. 2=Two and {5=Five, 8=Eight}
+
+Explanation:
+pollFirstEntry() removes and returns the lowest key entry.
+
+
+
+7. 
+SubMap Example
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(1, "A");
+map.put(3, "C");
+map.put(5, "E");
+map.put(7, "G");
+System.out.println(map.subMap(3, 7));
+
+Options:
+A. {3=C, 5=E, 7=G}
+B. {3=C, 5=E}
+C. {1=A, 3=C, 5=E}
+D. {}
+
+Answer: B. {3=C, 5=E}
+
+Explanation:
+subMap(3, 7) → includes 3 but excludes 7.
+
+
+
+8. 
+headMap Example
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(10, "A");
+map.put(20, "B");
+map.put(30, "C");
+System.out.println(map.headMap(20));
+
+Options:
+A. {10=A, 20=B}
+B. {10=A}
+C. {20=B, 30=C}
+D. {}
+
+Answer: B. {10=A}
+
+Explanation:
+headMap(20) gives all entries strictly less than 20.
+
+
+
+9. descendingMap
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(1, "One");
+map.put(2, "Two");
+map.put(3, "Three");
+System.out.println(map.descendingMap());
+
+Options:
+A. {1=One, 2=Two, 3=Three}
+B. {3=Three, 2=Two, 1=One}
+C. Random order
+D. {}
+
+Answer: B. {3=Three, 2=Two, 1=One}
+
+Explanation:
+descendingMap() returns a reverse-order view of the TreeMap.
+
+
+
+10. Custom Comparator with Strings
+TreeMap<String, Integer> map = new TreeMap<>((a, b) -> b.compareTo(a));
+map.put("Apple", 10);
+map.put("Mango", 20);
+map.put("Banana", 30);
+System.out.println(map);
+
+Options:
+A. {Apple=10, Banana=30, Mango=20}
+B. {Mango=20, Banana=30, Apple=10}
+C. {Banana=30, Mango=20, Apple=10}
+D. Random order
+
+Answer: B. {Mango=20, Banana=30, Apple=10}
+
+Explanation:
+Custom comparator sorts strings in reverse alphabetical order.
+
+
+
+
+					JDBC(Java Database Connectivity)
+==============================================================================================================================
+
+1. 
+Driver Registration
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    System.out.println("Driver Loaded");
+} catch (Exception e) {
+    System.out.println("Error");
+}
+
+
+What will happen if the driver class is not in the classpath?
+A. Driver Loaded
+B. Error
+C. NullPointerException
+D. No output
+
+Answer: B. Error
+Explanation: Class.forName() throws ClassNotFoundException if driver JAR is missing.
+
+
+
+2. 
+Connection URL
+Which is the correct MySQL JDBC connection URL?
+A. jdbc:mysql://localhost:3306/dbname
+B. jdbc:oracle:thin:@localhost:1521:dbname
+C. jdbc:sqlserver://localhost:1433;databaseName=dbname
+D. jdbc:postgresql://localhost:5432/dbname
+
+Answer: A. jdbc:mysql://localhost:3306/dbname
+
+Explanation: MySQL uses port 3306 and syntax jdbc:mysql://<host>:<port>/<db>.
+
+
+
+3. 
+AutoCommit
+Connection con = DriverManager.getConnection(url, user, pass);
+con.setAutoCommit(false);
+Statement st = con.createStatement();
+st.executeUpdate("INSERT INTO emp VALUES (101,'Alex')");
+
+
+What happens if con.commit() is not called?
+A. Data is inserted
+B. Data is not inserted
+C. Data is inserted but locked
+D. SQLException
+
+Answer: B. Data is not inserted
+Explanation: With setAutoCommit(false), changes are only saved after commit().
+
+
+
+4. PreparedStatement vs Statement
+Which is true about PreparedStatement?
+A. Slower than Statement
+B. Supports SQL Injection
+C. Allows parameterized queries
+D. Cannot be reused
+
+Answer: C. Allows parameterized queries
+
+Explanation: PreparedStatement prevents SQL Injection and allows query reuse with parameters.
+
+
+
+5. 
+Retrieving AutoGenerated Keys
+PreparedStatement ps = con.prepareStatement(
+    "INSERT INTO student(name) VALUES(?)",
+    Statement.RETURN_GENERATED_KEYS);
+ps.setString(1, "John");
+ps.executeUpdate();
+ResultSet rs = ps.getGeneratedKeys();
+
+What does rs contain?
+A. No rows
+B. Auto-generated primary key
+C. Null
+D. SQLException
+
+Answer: B. Auto-generated primary key
+Explanation: RETURN_GENERATED_KEYS retrieves the DB-generated key (like auto-increment ID).
+
+
+
+6. 
+Batch Update
+PreparedStatement ps = con.prepareStatement("INSERT INTO emp VALUES(?, ?)");
+ps.setInt(1, 101); ps.setString(2, "A"); ps.addBatch();
+ps.setInt(1, 102); ps.setString(2, "B"); ps.addBatch();
+int[] count = ps.executeBatch();
+
+What does count.length contain?
+A. 0
+B. 1
+C. 2
+D. SQLException
+
+Answer: C. 2
+Explanation: Two SQL statements added → executeBatch() returns array of update counts.
+
+
+
+7. 
+ResultSet Cursor
+ResultSet rs = st.executeQuery("SELECT * FROM emp");
+rs.absolute(3);
+System.out.println(rs.getInt(1));
+
+Which condition is required?
+A. TYPE_FORWARD_ONLY
+B. TYPE_SCROLL_INSENSITIVE
+C. TYPE_SCROLL_SENSITIVE
+D. Both B & C
+
+Answer: D. Both B & C
+Explanation: absolute(int) requires scrollable ResultSet, not forward-only.
+
+
+
+8. 
+Savepoint Example
+con.setAutoCommit(false);
+Savepoint sp = con.setSavepoint("sp1");
+st.executeUpdate("INSERT INTO emp VALUES(201,'Mike')");
+con.rollback(sp);
+con.commit();
+
+Effect on data?
+A. Row inserted
+B. Row not inserted
+C. SQLException
+D. Partially inserted
+
+Answer: B. Row not inserted
+Explanation: rollback(sp) undoes changes after savepoint → nothing is committed.
+
+
+
+9. 
+Close Connection
+What happens if Connection.close() is not called?
+A. Nothing, JVM auto-closes
+B. Possible memory leak
+C. SQLException immediately
+D. Only statements close
+
+Answer: B. Possible memory leak
+Explanation: Connections remain open in pool → may cause connection leaks.
+
+
+
+10. 
+CallableStatement
+CallableStatement cs = con.prepareCall("{call getSalary(?,?)}");
+cs.setInt(1, 101);
+cs.registerOutParameter(2, Types.INTEGER);
+cs.execute();
+
+What does parameter 2 represent?
+A. IN parameter
+B. OUT parameter
+C. INOUT parameter
+D. Return value
+
+Answer: B. OUT parameter
+Explanation: registerOutParameter() defines parameter to receive output from stored procedure.
+
+
+
+11. 
+Transaction Isolation
+Which isolation prevents dirty reads but allows non-repeatable reads?
+A. READ_UNCOMMITTED
+B. READ_COMMITTED
+C. REPEATABLE_READ
+D. SERIALIZABLE
+
+Answer: B. READ_COMMITTED
+Explanation: Prevents dirty reads but non-repeatable reads still possible.
+
+
+
+12. 
+RowSet
+Which RowSet is connected?
+A. JdbcRowSet
+B. CachedRowSet
+C. WebRowSet
+D. FilteredRowSet
+
+Answer: A. JdbcRowSet
+Explanation: JdbcRowSet is connected, others are disconnected rowsets.
+
+
+
+13. 
+Connection Pooling
+
+Which JDBC API feature enables connection pooling?
+A. DriverManager
+B. DataSource
+C. Statement
+D. ResultSet
+
+Answer: B. DataSource
+Explanation: DataSource (via JNDI) allows connection pooling for efficiency.
+
+
+
+14. 
+Updatable ResultSet
+ResultSet rs = st.executeQuery("SELECT * FROM emp");
+rs.updateString("name", "NewName");
+rs.updateRow();
+
+What does this do?
+A. Updates local copy only
+B. Updates both ResultSet & DB
+C. Throws SQLException always
+D. Deletes row
+
+Answer: B. Updates both ResultSet & DB
+Explanation: updateRow() applies changes to database if ResultSet is updatable.
+
+
+
+15. 
+Metadata
+DatabaseMetaData dbmd = con.getMetaData();
+System.out.println(dbmd.getDriverName());
+
+What does this print?
+A. Database version
+B. Driver name used in connection
+C. JDBC URL
+D. Username
+
+Answer: B. Driver name used in connection
+Explanation: getDriverName() returns JDBC driver implementation (e.g., MySQL Connector/J).

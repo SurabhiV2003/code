@@ -1,0 +1,29 @@
+1.Student Management System
+
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    grade VARCHAR(10)
+);
+
+1. Insert a new student (CREATE)
+2. Retrieve all students (READ)
+3. Update a student’s grade by ID (UPDATE)
+4. Delete a student by ID (DELETE)
+
+
+2. Employee Payroll Management
+CREATE TABLE employee (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(30),
+    salary DOUBLE
+);
+
+1. Insert an employee (CREATE)
+2. Display employees whose salary is greater than a user input (READ with condition)
+3. Update salary by employee id (UPDATE)
+4. Delete employee by id (DELETE)
+5. Display all data (sorted by salary and name)
+

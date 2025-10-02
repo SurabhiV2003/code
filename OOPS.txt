@@ -1,0 +1,1343 @@
+					Object Oriented Programming
+==============================================================================================================================
+
+1. 
+What is the output of the following code?
+class A {
+    void show() { System.out.println("Class A"); }
+}
+class B extends A {
+    void show() { System.out.println("Class B"); }
+}
+class C extends B {
+    void show() { System.out.println("Class C"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        A obj = new C();
+        obj.show();
+    }
+}
+
+Options:
+A. Class A
+B. Class B
+C. Class C
+D. Compile-time error
+
+Answer: C. Class C
+
+Explanation:
+obj is of type A, but object is created as C.
+Method overriding uses runtime polymorphism (dynamic method dispatch).
+Hence, show() of C is executed.
+
+
+
+2. 
+Which statement is TRUE about encapsulation in Java?
+class Student {
+    private int age;
+    public void setAge(int age) { this.age = age; }
+    public int getAge() { return age; }
+}
+
+Options:
+A. Encapsulation is achieved because variables are private and accessed only via getters/setters.
+B. Encapsulation is broken since setters are public.
+C. Encapsulation requires abstract classes.
+D. Encapsulation is only possible with interfaces.
+
+Answer: A. Encapsulation is achieved because variables are private and accessed only via getters/setters.
+
+Explanation:
+Encapsulation = data hiding + controlled access.
+Making fields private and exposing getters/setters achieves encapsulation.
+
+
+
+3. 
+What will be the output?
+abstract class Animal {
+    abstract void sound();
+}
+class Dog extends Animal {
+    void sound() { System.out.println("Bark"); }
+}
+class Cat extends Animal {
+    void sound() { System.out.println("Meow"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Animal a1 = new Dog();
+        Animal a2 = new Cat();
+        a1.sound();
+        a2.sound();
+    }
+}
+
+Options:
+A. Bark Meow
+B. Meow Bark
+C. Compile-time error
+D. Runtime error
+
+Answer: A. Bark Meow
+
+Explanation:
+Abstract class Animal forces subclasses to implement sound().
+Dog → prints "Bark".
+Cat → prints "Meow".
+Polymorphism ensures correct method at runtime.
+
+
+
+4. 
+What is the output?
+interface Shape {
+    void draw();
+}
+class Circle implements Shape {
+    public void draw() { System.out.println("Circle"); }
+}
+class Square implements Shape {
+    public void draw() { System.out.println("Square"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();
+        s = new Square();
+        s.draw();
+    }
+}
+
+Options:
+A. Circle Circle
+B. Square Square
+C. Circle Square
+D. Compile error
+
+Answer: C. Circle Square
+
+Explanation:
+First s refers to Circle, prints "Circle".
+Then reassigned to Square, prints "Square".
+
+
+
+5. 
+What is the output of the following code?
+class Parent {
+    static void display() {
+        System.out.println("Parent static method");
+    }
+    void print() {
+        System.out.println("Parent instance method");
+    }
+}
+class Child extends Parent {
+    static void display() {
+        System.out.println("Child static method");
+    }
+    void print() {
+        System.out.println("Child instance method");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.display();
+        p.print();
+    }
+}
+
+Options:
+A. Parent static method and Parent instance method
+B. Child static method and Child instance method
+C. Parent static method and Child instance method
+D. Child static method and Parent instance method
+
+Answer: C. Parent static method and Child instance method
+
+Explanation:
+Static methods are not overridden → they are hidden (compile-time binding, based on reference type).
+Instance methods use dynamic dispatch → runtime binding.
+So → Parent static method (based on reference) and Child instance method (based on object).
+
+
+1. 
+Which feature of OOP allows the same method name to be used for different types of input?
+
+A. Encapsulation
+B. Inheritance
+C. Polymorphism
+D. Abstraction
+
+Answer: C. Polymorphism
+Explanation: Polymorphism allows method overloading (compile-time) and overriding (runtime).
+
+
+
+2. 
+What will be the output?
+class A {
+    int x = 10;
+}
+class B extends A {
+    int x = 20;
+}
+public class Test {
+    public static void main(String[] args) {
+        A obj = new B();
+        System.out.println(obj.x);
+    }
+}
+
+
+A. 10
+B. 20
+C. Compile error
+D. Runtime error
+
+Answer: A. 10
+Explanation: Variables are not overridden → they depend on reference type.
+
+
+
+3. 
+Which statement about abstract classes is TRUE?
+
+A. An abstract class can have both abstract and non-abstract methods.
+B. Abstract classes cannot have constructors.
+C. Abstract classes must contain at least one abstract method.
+D. Abstract classes cannot implement interfaces.
+
+Answer: A. An abstract class can have both abstract and non-abstract methods.
+Explanation: They can also have constructors and fields.
+
+
+
+4. What is the output?
+class Parent {
+    void show() { System.out.println("Parent"); }
+}
+class Child extends Parent {
+    void show() { System.out.println("Child"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.show();
+    }
+}
+
+A. Parent
+B. Child
+C. Compile error
+D. Runtime error
+
+Answer: B. Child
+Explanation: Method overriding uses runtime polymorphism.
+
+
+
+5. 
+Which of the following is NOT a principle of OOP?
+
+A. Encapsulation
+B. Abstraction
+C. Polymorphism
+D. Compilation
+
+Answer: D. Compilation
+Explanation: Compilation is not an OOP principle.
+
+
+
+
+6. 
+What is the output?
+class A {
+    static void show() { System.out.println("A"); }
+}
+class B extends A {
+    static void show() { System.out.println("B"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.show();
+    }
+}
+
+
+A. A
+B. B
+C. Compile error
+D. Runtime error
+
+Answer: A. A
+Explanation: Static methods are hidden, not overridden. Binding depends on reference type.
+
+
+
+
+7. 
+Which keyword is used to access the immediate parent class’s constructor?
+
+A. super()
+B. this()
+C. parent()
+D. base()
+
+Answer: A. super()
+
+
+
+
+8. 
+What is the output?
+class A {
+    A() { System.out.println("A"); }
+}
+class B extends A {
+    B() { System.out.println("B"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        new B();
+    }
+}
+
+
+A. A B
+B. B A
+C. A
+D. B
+
+Answer: ✅ A. A B
+Explanation: Parent constructor executes first, then child.
+
+
+
+9. 
+Which of the following is TRUE about interfaces?
+
+A. Interfaces can have constructors.
+B. Interfaces can extend multiple interfaces.
+C. Interfaces can implement classes.
+D. Interfaces cannot have static methods.
+
+Answer: B. Interfaces can extend multiple interfaces.
+
+
+
+10. 
+What is the output?
+class A {
+    void display() { System.out.println("A"); }
+}
+class B extends A {
+    void display() { System.out.println("B"); }
+}
+class C extends B {
+    void display() { System.out.println("C"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        A obj = new C();
+        obj.display();
+    }
+}
+
+
+A. A
+B. B
+C. C
+D. Compile error
+
+Answer: C. C
+Explanation: Dynamic method dispatch calls subclass method.
+
+
+
+11. 
+Which OOP concept is used when one class acquires the properties of another class?
+
+A. Polymorphism
+B. Inheritance
+C. Abstraction
+D. Encapsulation
+
+Answer: B. Inheritance
+
+
+
+12. 
+What is the output?
+class A {
+    final void show() { System.out.println("A"); }
+}
+class B extends A {
+    void show() { System.out.println("B"); }
+}
+
+
+A. Prints A
+B. Prints B
+C. Compile error
+D. Runtime error
+
+Answer: C. Compile error
+Explanation: final methods cannot be overridden.
+
+
+
+13. 
+Which modifier is used to prevent inheritance of a class?
+
+A. static
+B. final
+C. private
+D. protected
+
+Answer: B. final
+
+
+
+14. 
+What is the output?
+class A {
+    int add(int a, int b) { return a + b; }
+}
+class B extends A {
+    double add(double a, double b) { return a + b; }
+}
+public class Test {
+    public static void main(String[] args) {
+        B obj = new B();
+        System.out.println(obj.add(5, 10));
+    }
+}
+
+
+A. 15
+B. 15.0
+C. Compile error
+D. Runtime error
+
+Answer: A. 15
+Explanation: obj.add(5,10) matches parent’s int add(int,int) (overloading, not overriding).
+
+
+
+15. 
+Which of the following allows multiple inheritance in Java?
+
+A. Classes
+B. Interfaces
+C. Abstract classes
+D. Packages
+
+Answer: B. Interfaces
+
+
+
+16. 
+What is the output?
+class A {
+    void show() { System.out.println("A"); }
+}
+class B extends A {
+    void show() { System.out.println("B"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        A obj1 = new A();
+        A obj2 = new B();
+        obj1.show();
+        obj2.show();
+    }
+}
+
+
+A. A B
+B. B B
+C. A A
+D. Compile error
+
+Answer: A. A B
+
+
+
+17. 
+Which of the following is NOT possible in Java OOPs?
+
+A. Multiple inheritance with classes
+B. Method overloading
+C. Method overriding
+D. Interfaces implementing multiple interfaces
+
+Answer: A. Multiple inheritance with classes
+
+
+
+18. 
+What is the output?
+class A {
+    static int x = 10;
+}
+class B extends A {
+    static { x = 20; }
+}
+public class Test {
+    public static void main(String[] args) {
+        System.out.println(A.x);
+    }
+}
+
+
+A. 10
+B. 20
+C. Compile error
+D. Runtime error
+
+Answer: B. 20
+Explanation: x is inherited → updated by B’s static block.
+
+
+
+19. 
+Which of these is NOT a type of polymorphism in Java?
+
+A. Compile-time
+B. Runtime
+C. Static
+D. Multiple
+
+Answer: D. Multiple
+
+
+
+20. 
+What is the output?
+class Parent {
+    void display() { System.out.println("Parent"); }
+}
+class Child extends Parent {
+    void display() { System.out.println("Child"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Parent p = new Parent();
+        Child c = new Child();
+        Parent pc = new Child();
+        p.display();
+        c.display();
+        pc.display();
+    }
+}
+
+A. Parent Parent Parent
+B. Parent Child Parent
+C. Parent Child Child
+D. Compile error
+
+Answer: C. Parent Child Child
+
+
+
+21. 
+What is the output?
+interface A {
+    default void show() { System.out.println("A"); }
+}
+interface B {
+    default void show() { System.out.println("B"); }
+}
+class C implements A, B {
+    public void show() { System.out.println("C"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        new C().show();
+    }
+}
+
+A. A
+B. B
+C. C
+D. Compile error
+
+Answer: C. C
+Explanation: Must override due to diamond problem.
+
+
+
+22. 
+Which statement about constructor chaining is TRUE?
+
+A. Child class constructor calls parent class constructor automatically.
+B. Constructors can be inherited.
+C. Constructors are final by default.
+D. Constructor chaining is possible only in abstract classes.
+
+Answer: A. Child class constructor calls parent class constructor automatically.
+
+
+
+23. 
+What will be the output?
+class A {
+    A() { System.out.println("A"); }
+}
+class B extends A {
+    B() { System.out.println("B"); }
+}
+class C extends B {
+    C() { System.out.println("C"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        new C();
+    }
+}
+
+A. A B C
+B. C B A
+C. A C B
+D. B A C
+
+Answer: A. A B C
+Explanation: Constructor chaining follows inheritance hierarchy.
+
+
+
+24. 
+Which is TRUE about overriding?
+
+A. Return type must always be the same.
+B. Access modifier of child method cannot be more restrictive.
+C. Private methods can be overridden.
+D. Static methods can be overridden.
+
+Answer: B. Access modifier of child method cannot be more restrictive.
+
+
+
+25. 
+What is the output?
+class A {
+    private void show() { System.out.println("A"); }
+}
+class B extends A {
+    void show() { System.out.println("B"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        new B().show();
+    }
+}
+
+
+A. A
+B. B
+C. Compile error
+D. Runtime error
+
+Answer: B. B
+Explanation: Private methods are not inherited, so B.show() is a new method, not overriding.
+
+
+1. 
+Which of the following best describes runtime polymorphism in Java?
+
+a) Method overloading
+b) Method overriding
+c) Constructor chaining
+d) Static binding
+
+Answer: b) Method overriding
+Explanation: Runtime polymorphism is achieved via method overriding, where the method to execute is determined at runtime 
+based on the actual object type (dynamic dispatch). Method overloading is compile-time polymorphism.
+
+
+
+2. 
+What will be the output of the following code?
+class Parent {
+    void show() { System.out.println("Parent"); }
+}
+class Child extends Parent {
+    void show() { System.out.println("Child"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        Parent obj = new Child();
+        obj.show();
+    }
+}
+
+
+a) Parent
+b) Child
+c) Compilation error
+d) Runtime error
+
+Answer: b) Child
+Explanation: obj is declared as Parent but points to a Child object. Due to dynamic method dispatch, the overridden method in
+Child is executed.
+
+
+
+3. 
+Which OOP principle is violated if data members of a class are declared public?
+a) Inheritance
+b) Encapsulation
+c) Polymorphism
+d) Abstraction
+
+Answer: b) Encapsulation
+Explanation: Encapsulation hides data by using private/protected fields with public getters and setters. Making variables 
+public breaks this principle.
+
+
+
+4. Which keyword is used to prevent a class from being inherited in Java?
+
+a) abstract
+b) static
+c) final
+d) private
+
+Answer: c) final
+Explanation: Declaring a class final prevents inheritance. Example: final class A {} cannot be extended.
+
+
+
+5. Which of the following can a Java interface NOT have (before Java 8)?
+
+a) Abstract methods
+b) Static constants
+c) Constructors
+d) Multiple inheritance
+
+Answer: c) Constructors
+Explanation: Interfaces cannot have constructors because they are not instantiable. They define contracts, not object 
+construction.
+
+
+
+6. 
+Consider the code:
+abstract class Shape {
+    abstract void draw();
+}
+class Circle extends Shape {
+    void draw() { System.out.println("Drawing Circle"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();
+    }
+}
+
+What will be the output?
+a) Compilation error
+b) Drawing Circle
+c) Runtime error
+d) No output
+
+Answer: b) Drawing Circle
+Explanation: Circle provides an implementation for the abstract draw() method. Polymorphism ensures the correct method runs 
+at runtime.
+
+
+
+7. 
+Which statement is true about multiple inheritance in Java?
+
+a) Supported using classes only
+b) Supported using interfaces only
+c) Not supported in any way
+d) Supported using abstract classes only
+
+Answer: b) Supported using interfaces only
+Explanation: Java does not allow multiple inheritance with classes to avoid ambiguity (Diamond problem). However, it allows 
+multiple inheritance through interfaces.
+
+
+
+8. 
+Which of the following allows method overriding but not variable overriding?
+
+a) Static methods
+b) Instance methods
+c) Constructors
+d) Instance variables
+
+Answer: b) Instance methods
+Explanation: Only instance methods can be overridden. Variables and static methods are hidden, not overridden.
+
+9. 
+What will be the output of the following code?
+class A {
+    static void display() { System.out.println("A"); }
+}
+class B extends A {
+    static void display() { System.out.println("B"); }
+}
+public class Test {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.display();
+    }
+}
+
+a) A
+b) B
+c) Compilation error
+d) Runtime error
+
+Answer: a) A
+Explanation: Static methods are not overridden, they are hidden. The method call is resolved at compile time based on the 
+reference type (A).
+
+
+
+10. 
+Which concept is demonstrated in this code snippet?
+interface Vehicle {
+    void start();
+}
+interface Engine {
+    void fuelType();
+}
+class Car implements Vehicle, Engine {
+    public void start() { System.out.println("Car started"); }
+    public void fuelType() { System.out.println("Petrol"); }
+}
+
+a) Abstraction and encapsulation
+b) Multiple inheritance using interfaces
+c) Polymorphism through overloading
+d) Constructor overloading
+
+Answer: b) Multiple inheritance using interfaces
+Explanation: The class Car implements two interfaces (Vehicle and Engine), demonstrating multiple inheritance via interfaces,
+which is allowed in Java.
+
+
+
+1. 
+What does the super() keyword in Java specifically do?
+a) Calls the current class constructor
+b) Calls the parent class constructor
+c) Calls the parent class method explicitly
+d) Refers to the current object
+
+Answer: b) Calls the parent class constructor
+Explanation: super() is used to call the immediate parent class constructor. If not specified, Java inserts a default super()
+call in child constructors.
+
+
+
+2. 
+What will be the output of this code?
+class A {
+    A() { System.out.println("Parent Constructor"); }
+}
+class B extends A {
+    B() { 
+        super();
+        System.out.println("Child Constructor"); 
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        B obj = new B();
+    }
+}
+
+a) Parent Constructor
+b) Child Constructor
+c) Parent Constructor
+Child Constructor
+d) Compilation error
+
+Answer: c) Parent Constructor
+Child Constructor
+Explanation: The super() in B() calls A() first, then executes the child’s constructor body.
+
+
+
+3. 
+Which statement is true about using this() in constructors?
+a) Must be the last statement in a constructor
+b) Can only be used once in a constructor and must be the first statement
+c) Can call both parent and current class constructor simultaneously
+d) Optional and can be placed anywhere in a constructor
+
+Answer: b) Can only be used once in a constructor and must be the first statement
+Explanation: this() is used for constructor chaining in the same class and must be the first statement.
+
+
+
+4. 
+What is the output of the following code?
+class Test {
+    Test() { this(10); System.out.println("Default Constructor"); }
+    Test(int x) { System.out.println("Parameterized Constructor: " + x); }
+}
+public class Main {
+    public static void main(String[] args) {
+        new Test();
+    }
+}
+
+a) Default Constructor
+b) Parameterized Constructor: 10
+c) Parameterized Constructor: 10
+Default Constructor
+d) Compilation error
+
+Answer: c) Parameterized Constructor: 10
+Default Constructor
+Explanation: this(10) calls the parameterized constructor first, then the rest of the default constructor executes.
+
+
+
+5. Which of the following is not true about the super keyword?
+a) Can be used to call the immediate parent constructor
+b) Can be used to access parent class variables and methods
+c) Can call parent’s private methods
+d) Can resolve ambiguity when child and parent have the same variable names
+
+Answer: c) Can call parent’s private methods
+Explanation: Private members are not inherited, so super cannot access them.
+
+
+
+6. What will be the output of the following code?
+class A {
+    int x = 100;
+}
+class B extends A {
+    int x = 200;
+    void display() {
+        System.out.println(super.x);
+        System.out.println(this.x);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        new B().display();
+    }
+}
+
+a) 200
+200
+b) 100
+200
+c) 200
+100
+d) Compilation error
+
+Answer: b) 100
+200
+Explanation: super.x accesses the parent’s variable, while this.x refers to the current object’s variable.
+
+
+
+7. 
+Which of the following is correct about super() and this()?
+a) Both can be used together in the same constructor
+b) Both must be the last statement in a constructor
+c) Only one (super() or this()) can be used, and it must be the first statement
+d) They are interchangeable
+
+Answer: c) Only one (super() or this()) can be used, and it must be the first statement
+Explanation: Both super() and this() must be the first statement in a constructor, so they cannot coexist in the same 
+constructor.
+
+
+
+8. 
+Consider the following code:
+class Parent {
+    Parent() { System.out.println("Parent Constructor"); }
+}
+class Child extends Parent {
+    Child() {
+        this(5);
+        System.out.println("Child Default Constructor");
+    }
+    Child(int x) {
+        super();
+        System.out.println("Child Parameterized Constructor: " + x);
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        new Child();
+    }
+}
+
+What will be the output?
+a) Parent Constructor
+Child Default Constructor
+b) Parent Constructor
+Child Parameterized Constructor: 5
+Child Default Constructor
+c) Child Parameterized Constructor: 5
+Child Default Constructor
+d) Compilation error
+
+Answer: b) Parent Constructor
+Child Parameterized Constructor: 5
+Child Default Constructor
+Explanation: The default child constructor calls this(5), which calls the parameterized constructor. The parameterized 
+constructor calls super(), so the parent constructor runs first.
+
+
+
+9. 
+Which keyword resolves ambiguity in multiple variables with the same name in Java?
+a) this
+b) super
+c) both this and super
+d) none
+
+Answer: c) both this and super
+Explanation: this.variable refers to the current object’s variable, while super.variable refers to the parent’s variable.
+
+
+
+10. 
+What happens if a parent class has only a parameterized constructor, and the child class does not explicitly call 
+super(arguments)?
+a) The compiler automatically adds super()
+b) The program compiles successfully
+c) Compilation error
+d) The child constructor automatically initializes parent values
+
+Answer: c) Compilation error
+Explanation: If the parent class has no default constructor, the child must explicitly call a parameterized super(args). 
+Otherwise, the compiler error occurs because it tries to insert super() by default.
+
+
+
+1. 
+Constructor Chaining with this()
+class Test {
+    Test() {
+        this(20);
+        System.out.println("Default Constructor");
+    }
+    Test(int x) {
+        this("Hello");
+        System.out.println("Parameterized Constructor: " + x);
+    }
+    Test(String msg) {
+        System.out.println("String Constructor: " + msg);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        new Test();
+    }
+}
+
+Output:
+String Constructor: Hello
+Parameterized Constructor: 20
+Default Constructor
+
+Explanation:
+new Test() → calls default constructor.
+Inside default → this(20) → goes to int constructor.
+Int constructor → calls this("Hello") → executes String constructor first.
+Then int constructor prints → "Parameterized Constructor: 20".
+Finally default constructor prints → "Default Constructor".
+
+
+
+2. 
+Using super() and this() together
+class Parent {
+    Parent() { System.out.println("Parent Default"); }
+    Parent(int x) { System.out.println("Parent Parameterized: " + x); }
+}
+class Child extends Parent {
+    Child() {
+        this(50);
+        System.out.println("Child Default");
+    }
+    Child(int x) {
+        super(x);
+        System.out.println("Child Parameterized: " + x);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        new Child();
+    }
+}
+
+Output:
+Parent Parameterized: 50
+Child Parameterized: 50
+Child Default
+
+Explanation:
+new Child() → calls default constructor of Child.
+Default Child → calls this(50) → moves to parameterized Child.
+Parameterized Child → first calls super(50) → invokes Parent(int).
+Parent prints "Parent Parameterized: 50".
+Back in Child(int) → prints "Child Parameterized: 50".
+Control returns to Child() → prints "Child Default".
+
+
+
+3. 
+Resolving Ambiguity using this
+class Student {
+    String name;
+    Student(String name) {
+        this.name = name;
+    }
+    void display() {
+        System.out.println("Student Name: " + this.name);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("Alice");
+        s.display();
+    }
+}
+
+Output:
+Student Name: Alice
+
+Explanation:
+Constructor receives "Alice".
+this.name = name; → left-hand name refers to instance variable, right-hand refers to parameter.
+Without this, the compiler would assign parameter to itself → instance variable remains null.
+
+
+
+4. 
+Variable Hiding with super
+class Animal {
+    String sound = "Generic Sound";
+}
+class Dog extends Animal {
+    String sound = "Bark";
+    void printSound() {
+        System.out.println(this.sound);
+        System.out.println(super.sound);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.printSound();
+    }
+}
+
+Output:
+Bark
+Generic Sound
+
+Explanation:
+this.sound → refers to Dog’s field.
+super.sound → explicitly refers to Animal’s field.
+Fields are hidden, not overridden.
+
+
+
+5. 
+super() in Multi-level Inheritance
+class A {
+    A() { System.out.println("A Constructor"); }
+}
+class B extends A {
+    B() { System.out.println("B Constructor"); }
+}
+class C extends B {
+    C() { System.out.println("C Constructor"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        new C();
+    }
+}
+
+Output:
+A Constructor
+B Constructor
+C Constructor
+
+Explanation:
+Always starts from top of hierarchy.
+new C() → C() calls implicit super() → goes to B().
+B() → calls implicit super() → goes to A().
+Order: A → B → C.
+
+
+
+6. 
+this() inside Overloaded Constructors
+class Car {
+    Car() {
+        this("Sedan", 20000);
+        System.out.println("Default Car");
+    }
+    Car(String model, int price) {
+        System.out.println("Car Model: " + model + ", Price: " + price);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car();
+    }
+}
+
+Output:
+Car Model: Sedan, Price: 20000
+Default Car
+
+Explanation:
+new Car() → goes to default constructor.
+Default → calls this("Sedan", 20000) → executes parameterized constructor.
+Then prints "Default Car".
+
+
+
+7. 
+Accessing Parent Methods via super
+class Shape {
+    void draw() { System.out.println("Drawing Shape"); }
+}
+class Circle extends Shape {
+    void draw() {
+        super.draw();
+        System.out.println("Drawing Circle");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        c.draw();
+    }
+}
+
+
+Output:
+Drawing Shape
+Drawing Circle
+
+Explanation:
+super.draw() calls the parent version first.
+Then child’s overridden method executes.
+Useful when you want to extend parent logic.
+
+
+
+8. 
+Difference Between this() and super()
+class Parent {
+    Parent() { System.out.println("Parent Constructor"); }
+}
+class Child extends Parent {
+    Child() {
+        this("Hello");
+        System.out.println("Child Default Constructor");
+    }
+    Child(String msg) {
+        super();
+        System.out.println("Child Parameterized Constructor: " + msg);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        new Child();
+    }
+}
+
+Output:
+Parent Constructor
+Child Parameterized Constructor: Hello
+Child Default Constructor
+
+Explanation:
+new Child() → default constructor executes.
+Default → calls this("Hello") → goes to parameterized constructor.
+Parameterized → calls super() → Parent’s constructor executes first.
+Then Child parameterized executes → "Child Parameterized Constructor: Hello".
+Finally default prints "Child Default Constructor".
+
+
+
+9. 
+Compile-Time Error Scenario
+class Parent {
+    Parent(int x) { System.out.println("Parent: " + x); }
+}
+class Child extends Parent {
+    Child() {
+        //super();   // what happens if this is left as default?
+        System.out.println("Child Constructor");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        new Child();
+    }
+}
+
+Answer: ❌ Compilation Error
+
+Explanation:
+Parent has only Parent(int) constructor → no default constructor exists.
+Child constructor implicitly tries to call super() (no-arg).
+Since Parent doesn’t have it → compiler error: “constructor Parent in class Parent cannot be applied to given types”.
+Fix: explicitly call super(10);.
+
+
+
+10. 
+Chained this() and super() in Same Hierarchy
+class A {
+    A(int x) { System.out.println("A: " + x); }
+}
+class B extends A {
+    B() {
+        this(20);
+        System.out.println("B Default");
+    }
+    B(int x) {
+        super(x);
+        System.out.println("B Param: " + x);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        new B();
+    }
+}
+
+Output:
+A: 20
+B Param: 20
+B Default
+
+Explanation:
+new B() → calls default constructor.
+Default → calls this(20) → parameterized constructor.
+Parameterized → calls super(20) → prints "A: 20".
+Then prints "B Param: 20".
+Control goes back to default → prints "B Default".

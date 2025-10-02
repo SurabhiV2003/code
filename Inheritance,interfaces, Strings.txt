@@ -1,0 +1,56 @@
+
+1. Create a base class Vehicle with attributes brand and speed. Add a method displayInfo() to show vehicle details.
+Create a derived class Car that adds an attribute seats and overrides the displayInfo() method to include seat details.
+Write a program to create a Car object and display its details.
+
+output-
+
+Brand: Toyota
+Speed: 180 km/h
+Seats: 5
+
+
+
+2. Create an interface Playable with a method play().
+Create two classes Guitar and Piano that implement the interface. Each should print a different message when play() is called.
+Write a program to demonstrate polymorphism by storing both in an array of Playable and calling play().
+
+Out-put-
+Playing the guitar
+Playing the piano
+
+
+
+3.Create a class Animal with a method sound().
+Create two subclasses Dog and Cat that override the sound() method.
+Write a program that demonstrates method overriding using polymorphism.
+
+Output-
+Dog barks
+Cat meows 
+
+
+3. Reverse Words in a Sentence
+Write a Java program to read a sentence from the user and reverse each word in the sentence without changing the order of 
+the words.
+
+Input:
+Java is fun
+
+Output:
+Reversed words: avaJ si nuf
+
+
+
+4.Count Vowels and Consonants
+Write a Java program that reads a string from the user and counts the number of vowels and consonants in it. Ignore spaces 
+and digits.
+
+Input:
+Hello World 123
+
+Output:
+Vowels: 3
+Consonants: 7
+
+

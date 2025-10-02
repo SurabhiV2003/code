@@ -1,0 +1,147 @@
+1. Create a Student class with attributes: id, name, and marks. Implement Comparable<Student> to sort students by marks in 
+ascending order.
+Read n students from input.
+Store them in an ArrayList.
+Sort using Collections.sort() and print the sorted list.
+
+Input:
+3
+101 Alice 88.5
+102 Bob 75.0
+103 Charlie 92.0
+
+Output:
+Sorted by marks (ascending):
+102 Bob 75.0
+101 Alice 88.5
+103 Charlie 92.0
+
+
+
+
+
+
+2.Create an Employee class with attributes: id, name, and salary.
+Store employees in a LinkedList.
+First, sort by salary in descending order using a Comparator.
+Then, sort by name in alphabetical order using another Comparator.
+Print both sorted results.
+
+Input:
+3
+201 John 55000
+202 Alice 72000
+203 Bob 60000
+
+Output:
+Sorted by salary (descending):
+202 Alice 72000.0
+203 Bob 60000.0
+201 John 55000.0
+Sorted by name (alphabetical):
+202 Alice 72000.0
+203 Bob 60000.0
+201 John 55000.0
+
+
+3. Write a program that reads a paragraph from input, splits it into words, and stores them in a HashSet to eliminate 
+duplicates.
+Print the unique words.
+Also, print the total count of unique words.
+
+Input:
+Java is great and Java is powerful
+
+Output (order not guaranteed):
+
+Unique words:
+java
+is
+great
+powerful
+and
+Total unique words: 5
+
+
+
+
+4. Read n integers from input. Store them in a LinkedHashSet to remove duplicates while preserving insertion order.
+Finally, print the set.
+
+Input:
+8
+10 20 30 20 10 40 50 30
+
+Output:
+Numbers in insertion order (duplicates removed):
+[10, 20, 30, 40, 50]
+
+
+
+
+5.Create an Employee class with fields id, name, and salary.
+Store multiple employees in a TreeSet using a custom Comparator to sort employees by salary descending.
+If two employees have the same salary, sort them by name alphabetical order.
+
+Input:
+4
+101 Alice 50000
+102 Bob 60000
+103 Charlie 50000
+104 David 75000
+
+Output:
+Employees sorted by salary(desc), then name:
+104 David 75000.0
+102 Bob 60000.0
+101 Alice 50000.0
+103 Charlie 50000.0
+
+
+6.Write a program that reads a paragraph of text and counts the frequency of each word using a HashMap.
+Print the words and their counts.
+Order is not guaranteed.
+
+Input:
+Java is great and Java is powerful
+
+Output (order not guaranteed):
+Word frequencies (unordered):
+java -> 2
+is -> 2
+great -> 1
+and -> 1
+powerful -> 1
+
+
+
+7.Read a string from input. Use a LinkedHashMap to find the first non-repeated character (preserve insertion order).
+
+Input:
+swiss
+
+Output:
+First non-repeated character: w
+
+
+
+
+8.
+Read employee details: id name salary. Store them in a TreeMap where the key is the employee id.
+Since TreeMap sorts keys, employees should be printed in ascending order of id.
+
+Input:
+4
+103 Alice 50000
+101 Bob 60000
+104 Charlie 45000
+102 David 75000
+
+Output:
+Employees sorted by ID:
+101 -> Bob 60000.0
+102 -> David 75000.0
+103 -> Alice 50000.0
+104 -> Charlie 45000.0
+
+

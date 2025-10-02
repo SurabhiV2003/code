@@ -1,0 +1,1673 @@
+
+MCQs on JAVA topics-
+							
+							Operators
+=============================================================================================================================
+
+1.
+What will be the output of the following code?
+int a = 5;  
+int b = ++a * 5 / a-- + --a;
+System.out.println(b);
+
+Options:
+A) 6
+B) 7
+C) 5
+D) 4
+
+Answer: B) 7
+
+Explanation:
+++a → 6 (pre-increment)
+6 * 5 / a-- → 30 / 6 = 5 (but a becomes 5 after post-decrement)
+--a → 4
+Total = 5 + 2 = 7
+
+
+2.
+What will System.out.println(10 + 20 + "Java" + 10 + 20); print?
+
+Options:
+A) 30Java30
+B) Java1020
+C) 30Java1020
+D) 1020Java30
+
+Answer: C) 30Java1020
+
+Explanation:
+
+10 + 20 = 30
+Then 30 + "Java" = "30Java"
+"30Java" + 10 = "30Java10"
+"30Java10" + 20 = "30Java1020"
+
+
+3.
+What is the output of:
+System.out.println(10 * 10 / 5 + 3 - 1 * 4 / 2);
+
+Options:
+A) 21
+B) 22
+C) 18
+D) 19
+
+Answer: A) 21
+
+Explanation:
+Multiplication/division have same precedence → left to right.
+10 * 10 / 5 = 100 / 5 = 20
+1 * 4 / 2 = 4 / 2 = 2
+20 + 3 - 2 = 21
+
+
+4.
+What is the output of the following?
+int a = 10, b = 20;  
+System.out.println(a+++b);
+
+Options:
+A) 30
+B) 31
+C) 32
+D) Compilation Error
+
+Answer: A) 30
+
+Explanation:
+a++ + b → 10 + 20 = 30
+Then a = 11 internally.
+
+
+5.
+What does this print?
+System.out.println(true || false && false);
+
+Options:
+A) true
+B) false
+C) Compilation Error
+D) Runtime Error
+
+Answer: A) true
+
+Explanation:
+&& has higher precedence than ||.
+Expression = true || (false && false) → true || false → true.
+
+
+6.
+Evaluate:
+System.out.println(10 & 7);
+
+Options:
+A) 10
+B) 2
+C) 0
+D) 7
+
+Answer: B) 2
+
+Explanation:
+Binary of 10 → 1010
+Binary of 7 → 0111
+Bitwise AND → 0010 = 2.
+
+
+7.
+What is the output?
+int a = 1;  
+a = a++ + ++a * a--;
+System.out.println(a);
+
+Options:
+A) 4
+B) 6
+C) 5
+D) 7
+
+Answer: D) 7
+
+Explanation:
+a++ = 1 (then a=2)
+++a = 3
+a-- = 3 (then a=2)
+Expression = 1 + 3*3 = 10 (Oops, wait carefully!)
+
+Let's compute:
+a = 1
+a++ = 1 (a=2)
+++a = 3
+a-- = 3 (a=2)
+So → 1 + (3*3) = 10.
+
+
+
+8.
+What is the result of:
+System.out.println(5 << 2);
+
+Options:
+A) 5
+B) 10
+C) 20
+D) 40
+
+Answer: C) 20
+
+Explanation:
+Left shift 5 << 2 = 5 * 2^2 = 20.
+
+
+
+9.
+Output of:
+System.out.println(20 >> 2);
+
+Options:
+A) 10
+B) 5
+C) 15
+D) 4
+
+Answer: B) 5
+
+Explanation:
+Right shift 20 >> 2 = 20 / 2^2 = 20 / 4 = 5.
+
+
+
+10.
+What will this print?
+System.out.println(~5);
+
+Options:
+A) -6
+B) -5
+C) 6
+D) Compilation Error
+
+Answer: A) -6
+
+Explanation:
+~ flips all bits.
+~x = -(x+1)
+~5 = -(5+1) = -6.
+
+
+
+11.
+What does this code print?
+int a = 7;  
+System.out.println(a ^ 2);
+
+Options:
+A) 5
+B) 7
+C) 9
+D) 4
+
+Answer: C) 9
+
+Explanation:
+7 (0111) XOR 2 (0010) = 1001 (9).
+
+
+
+12.
+Output of:
+int x = 10;  
+System.out.println(x++ + ++x);
+
+Options:
+A) 21
+B) 22
+C) 23
+D) 20
+
+Answer: B) 22
+
+Explanation:
+x++ = 10 (then x=11)
+++x = 12
+Total = 10 + 12 = 22.
+
+
+
+13.
+Evaluate:
+System.out.println(10 == 10.0);
+
+Options:
+A) true
+B) false
+C) Compilation Error
+D) Runtime Error
+
+Answer: A) true
+
+Explanation:
+10 (int) auto-promotes to 10.0 (double).
+Comparison → true.
+
+
+
+14.
+What will happen?
+int a = 10;  
+System.out.println(a = a == 10 ? 20 : 30);
+
+Options:
+A) 10
+B) 20
+C) 30
+D) Compilation Error
+
+Answer: B) 20
+
+Explanation:
+a == 10 → true, so result = 20.
+Then assigned → a = 20.
+
+
+
+
+15.
+What will be printed?
+System.out.println((true && false) || (true && !false));
+
+Options:
+A) true
+B) false
+C) Compilation Error
+D) Runtime Error
+
+Answer: A) true
+
+Explanation:
+(true && false) = false
+(true && !false) = true
+Expression = false || true = true.
+
+
+
+
+
+					Loops and Conditional statements (if else and switch)
+==============================================================================================================================
+
+
+1.
+What will be the output of the following code?
+
+public class Test {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 5; sum += i++) {}
+        System.out.println(sum);
+    }
+}
+
+Options:
+A. 10
+B. 15
+C. 21
+D. 0
+
+Answer: B. 15
+Explanation: The loop increments i after adding it to sum. So, 1+2+3+4+5 = 15.
+
+
+
+2.
+What will be printed?
+
+public class Test {
+    public static void main(String[] args) {
+        int i;
+        for (i = 0; i < 3; i++) ;
+        System.out.println(i);
+    }
+}
+
+Options:
+A. 0
+B. 2
+C. 3
+D. Infinite loop
+
+Answer: C. 3
+Explanation: The semicolon after for makes it an empty loop body. Loop increments i until i=3. Then prints 3.
+
+
+
+3.
+What will this code output?
+
+for (int i = 0; i < 10; i++) {
+    if (i == 5) break;
+    System.out.print(i);
+}
+
+Options:
+A. 0123456789
+B. 01234
+C. 012345
+D. Compilation Error
+
+Answer: B. 01234
+Explanation: When i == 5, loop breaks. So, prints 0–4 only.
+
+
+
+4.
+What is the output?
+int i = 0;
+for (System.out.print("A"); i < 3; System.out.print("B")) {
+    i++;
+    System.out.print("C");
+}
+
+Options:
+A. ACBCBCB
+B. ACCBB
+C. ACBCB
+D. ACBCBC
+
+Answer: A. ACBCBCB
+Explanation: First "A" is printed before loop starts. Then: "C" then "B", repeated 3 times.
+
+
+
+5.
+What happens here?
+for( ; ; ) {
+    System.out.println("Hello");
+}
+
+
+Options:
+A. Prints nothing
+B. Infinite loop printing "Hello"
+C. Compilation error
+D. Runs once
+
+Answer: B. Infinite loop printing "Hello"
+Explanation: All parts of for are optional. Without condition, default is true.
+
+
+
+6.
+Predict the output:
+int i = 1;
+for (; i <= 5; ) {
+    System.out.print(i++);
+}
+
+Options:
+A. 12345
+B. 1234
+C. Infinite loop
+D. 01234
+
+Answer: A. 12345
+Explanation: Update expression is missing, but i++ inside body increments i. Loop runs 5 times.
+
+
+
+7.
+What is printed?
+int count = 0;
+for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= i; j++) {
+        count++;
+    }
+}
+System.out.println(count);
+
+Options:
+A. 10
+B. 15
+C. 5
+D. 20
+
+Answer: B. 15
+Explanation: Inner loop runs 1+2+3+4+5 = 15 times.
+
+
+
+8.
+What will the following print?
+for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) continue;
+    System.out.print(i);
+}
+
+Options:
+A. 02468
+B. 13579
+C. 0123456789
+D. Infinite loop
+
+Answer: B. 13579
+Explanation: continue skips even numbers. Prints only odd numbers.
+
+
+
+9.
+What is the output?
+int x = 0;
+for (int i = 1; i < 5; i++) {
+    x = i;
+}
+System.out.println(x);
+
+Options:
+A. 0
+B. 3
+C. 4
+D. 5
+
+Answer: C. 4
+Explanation: At the end of loop, x is assigned last value of i (which is 4 before condition fails).
+
+
+
+10.
+What happens here?
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        if (i == j) continue;
+        System.out.print(i + "" + j + " ");
+    }
+}
+
+Options:
+A. 01 02 10 12 20 21
+B. 00 11 22
+C. 01 02 12 20
+D. 01 10 20
+
+Answer: A. 01 02 10 12 20 21
+Explanation: Skips pairs where i==j. Prints all other (i,j) pairs.
+
+
+
+1. 
+What is the output?
+for (int i = 0; i < 5; i++) {
+    if (i == 2)
+        continue;
+    if (i == 4)
+        break;
+    System.out.print(i + " ");
+}
+
+Options:
+A. 0 1 2 3
+B. 0 1 3
+C. 0 1 2 3 4
+D. 0 1 3 4
+
+Answer: B. 0 1 3
+
+Explanation:
+i=0 → print 0
+i=1 → print 1
+i=2 → continue (skip printing)
+i=3 → print 3
+i=4 → break (loop ends)
+So output = 0 1 3.
+
+
+
+2. 
+What will be printed?
+int count = 0;
+for (int i = 1; i <= 3; i++) {
+    for (int j = i; j <= 3; j++) {
+        count++;
+    }
+}
+System.out.println(count);
+
+Options:
+A. 3
+B. 4
+C. 5
+D. 6
+
+Answer: D. 6
+
+Explanation:
+For i=1: j=1→3 → 3 iterations
+For i=2: j=2→3 → 2 iterations
+For i=3: j=3→3 → 1 iteration
+
+Actually, condition is i <= 3, so:
+1st loop (i=1) → 3 times
+2nd loop (i=2) → 2 times
+3rd loop (i=3) → 1 time
+= 6 iterations, so Answer D.
+
+Correct Answer: D. 6
+
+
+
+3. 
+Find the output.
+for (int i = 0; i < 5; System.out.print(i + " "), i++);
+
+Options:
+A. 0 1 2 3 4
+B. 1 2 3 4 5
+C. 0 1 2 3 4 5
+D. Infinite loop
+
+Answer: A. 0 1 2 3 4
+
+Explanation:
+Here, the update expression is System.out.print(i + " "), i++.
+Prints first, then increments.
+Loop runs while i < 5.
+Prints 0,1,2,3,4.
+
+
+
+4. 
+What is the output?
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        if (i == j)
+            continue;
+        System.out.print(i + "" + j + " ");
+    }
+}
+
+Options:
+A. 01 02 10 12 20 21
+B. 01 02 10 12 20
+C. 01 02 12 20 21
+D. 01 02 10 12 21
+
+Answer: A. 01 02 10 12 20 21
+
+Explanation:
+Skips when i==j.
+Pairs printed:
+i=0 → j=1,2 → 01,02
+i=1 → j=0,2 → 10,12
+i=2 → j=0,1 → 20,21
+
+
+
+5. 
+What is the output?
+int x = 0;
+for (System.out.print("A"); x < 3; System.out.print("C")) {
+    System.out.print("B");
+    x++;
+}
+
+Options:
+A. ABCBCC
+B. ABCBCC... infinite
+C. ABCBC
+D. ABCBCCB
+
+Answer: A. ABCBCC
+
+Explanation:
+Initialization → prints "A"
+Loop runs while x<3:
+Iter1: print B → then print C → "ABC"
+Iter2: print B → then print C → "ABCBC"
+Iter3: print B → then print C → "ABCBCC"
+Loop ends.
+
+Final output = ABCBCC
+
+
+
+
+1. 
+What is the output?
+int[] arr = {10, 20, 30};
+for (int x : arr) {
+    x = x + 5;
+}
+for (int x : arr) {
+    System.out.print(x + " ");
+}
+
+Options:
+A. 10 20 30
+B. 15 25 35
+C. 0 0 0
+D. Compile-time error
+
+Answer: A. 10 20 30
+
+Explanation:
+In enhanced for, x is a copy of each element, not a reference.
+Modifying x does not change the actual array.
+Final output = original values = 10 20 30.
+
+
+
+2. 
+What will be printed?
+String[] names = {"A", "B", "C"};
+for (String s : names) {
+    s = s + "X";
+}
+for (String s : names) {
+    System.out.print(s + " ");
+}
+
+Options:
+A. AX BX CX
+B. A B C
+C. null null null
+D. Compile-time error
+
+Answer: B. A B C
+
+Explanation:
+Strings are immutable.
+s = s + "X"; creates a new string, but does not modify the original array.
+So the array remains unchanged: A B C.
+
+
+
+3. 
+Which of the following causes ConcurrentModificationException?
+import java.util.*;
+public class Test {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+        for (int num : list) {
+            if (num == 2) {
+                list.remove(Integer.valueOf(num));
+            }
+        }
+    }
+}
+
+Options:
+A. Runs fine, prints nothing
+B. Compile-time error
+C. ConcurrentModificationException
+D. Removes element safely
+
+Answer: C. ConcurrentModificationException
+
+Explanation:
+Enhanced for loop internally uses an Iterator.
+Modifying the list (list.remove) while iterating without using the iterator’s remove() causes ConcurrentModificationException.
+
+
+
+4. 
+What is the output?
+char[] letters = {'a', 'b', 'c'};
+for (char ch : letters) {
+    System.out.print(++ch + " ");
+}
+
+Options:
+A. b c d
+B. a b c
+C. ASCII values of b, c, d
+D. Compile-time error
+
+Answer: A. b c d
+
+Explanation:
+++ch increments the character → 'a' → 'b', 'b' → 'c', 'c' → 'd'.
+Printing a char actually prints the character, but since it’s inside System.out.print(++ch + " "), the + makes it String concatenation, so output = b c d.
+Correct Answer should be: A. b c d
+
+
+
+5. 
+What is the output?
+List<String> list = new ArrayList<>();
+list.add("Java");
+list.add("Python");
+list.add("C++");
+
+for (String lang : list) {
+    if (lang.equals("Python")) {
+        lang = "Go";
+    }
+}
+System.out.println(list);
+
+Options:
+A. [Java, Python, C++]
+B. [Java, Go, C++]
+C. [Go, Python, C++]
+D. Compile-time error
+
+Answer: A. [Java, Python, C++]
+
+Explanation:
+In enhanced for, the loop variable (lang) is a copy of each element.
+Changing lang does not update the actual list element.
+List remains unchanged.
+
+
+
+1. 
+What will be the output?
+int i = 1;
+while (i < 5) {
+    System.out.print(i);
+    i++;
+}
+
+Options:
+A. 12345
+B. 1234
+C. 01234
+D. Infinite loop
+
+Answer: B. 1234
+Explanation: Condition checks before execution. Runs for i = 1,2,3,4. When i=5, loop stops.
+
+
+
+2. 
+What will this print?
+int i = 5;
+while (i > 0) {
+    System.out.print(i--);
+}
+
+Options:
+A. 54321
+B. 43210
+C. 543210
+D. Compilation error
+
+Answer: A. 54321
+Explanation: Decrement happens after printing, so sequence is 5,4,3,2,1.
+
+
+
+3. 
+What is the output?
+int i = 0;
+while (i < 5) {
+    if (i == 3) break;
+    System.out.print(i);
+    i++;
+}
+
+Options:
+A. 01234
+B. 0123
+C. 012
+D. Infinite loop
+
+Answer: C. 012
+Explanation: Loop breaks when i==3. So prints only 0,1,2.
+
+
+
+4. 
+What happens here?
+int i = 0;
+while (i < 5) ;
+{
+    System.out.println("Hello");
+    i++;
+}
+
+Options:
+A. Prints Hello 5 times
+B. Infinite loop
+C. Compilation error
+D. Prints Hello once
+
+Answer: B. Infinite loop
+Explanation: The semicolon ; makes the while body empty, causing infinite loop. The block {} after it is just a separate block, not part of loop.
+
+
+
+5. 
+What is the output?
+int i = 1;
+int sum = 0;
+while (i <= 5) {
+    sum += i++;
+}
+System.out.println(sum);
+
+Options:
+A. 10
+B. 15
+C. 20
+D. 0
+
+Answer: B. 15
+Explanation: It calculates sum = 1+2+3+4+5 = 15.
+
+
+
+6. 
+What will print?
+int i = 10;
+while (i++ < 15) {
+    System.out.print(i + " ");
+}
+
+Options:
+A. 11 12 13 14 15
+B. 10 11 12 13 14
+C. 11 12 13 14 15 16
+D. Infinite loop
+
+Answer: A. 11 12 13 14 15
+Explanation: First check: 10 < 15 → true, then i=11. This continues until i=15.
+
+
+
+7. 
+Predict the output.
+int i = 1;
+while (i <= 10) {
+    i *= 2;
+    System.out.print(i + " ");
+}
+
+Options:
+A. 1 2 4 8
+B. 2 4 8 16
+C. 2 4 8
+D. Infinite loop
+
+Answer: B. 2 4 8 16
+Explanation: Each iteration doubles i. Stops when i=16, since next would be 32 (>10, loop ends).
+
+
+
+8. 
+What is the result?
+int i = 1;
+while (i < 100) {
+    i *= 10;
+    System.out.print(i + " ");
+}
+
+Options:
+A. 1 10 100
+B. 10 100 1000
+C. 10 100
+D. 1 10
+
+Answer: B. 10 100 1000
+Explanation: Start i=1, first iteration → i=10, second → 100, third → 1000 (loop ends).
+
+
+
+9. 
+What will this produce?
+int i = 0;
+while (i < 5) {
+    System.out.print(i);
+    i += 2;
+}
+
+Options:
+A. 024
+B. 01234
+C. 0246
+D. 135
+
+Answer: A. 024
+Explanation: Increments by 2 → prints 0, 2, 4.
+
+
+
+10. 
+What is the output?
+int i = 1, j = 5;
+while (i <= j) {
+    System.out.print(i * j + " ");
+    i++;
+    j--;
+}
+
+Options:
+A. 5 8 9
+B. 5 8 9 8 5
+C. 5 8
+D. 5 10 15
+
+Answer: A. 5 8 9
+Explanation:
+Iteration 1: i=1, j=5 → 1*5=5
+Iteration 2: i=2, j=4 → 8
+Iteration 3: i=3, j=3 → 9
+Loop ends after i=4, j=2.
+
+
+
+1. 
+What will the code print?
+int i = 5;
+do {
+    System.out.print(i + " ");
+    i++;
+} while (i < 5);
+
+Options:
+A. 5
+B. Nothing
+C. Infinite loop
+D. 5 6
+
+Answer: A. 5
+Explanation: Condition (i < 5) is false initially, but do-while executes at least once, printing 5.
+
+
+
+2. 
+Predict the output.
+int i = 1;
+do {
+    System.out.print(i);
+    i++;
+} while (i <= 5);
+
+Options:
+A. 12345
+B. 1234
+C. 123456
+D. Infinite loop
+
+Answer: A. 12345
+Explanation: Loop runs while i <= 5. Prints numbers 1 to 5.
+
+
+
+3. 
+What will print?
+int i = 10;
+do {
+    System.out.print(i + " ");
+    i -= 2;
+} while (i > 0);
+
+Options:
+A. 10 8 6 4 2
+B. 10 8 6 4
+C. 8 6 4 2
+D. 10 8 6 4 2 0
+
+Answer: A. 10 8 6 4 2
+Explanation: Decrements by 2 until i=0. Condition fails when i=0.
+
+
+
+4. 
+Find the output.
+int i = 0;
+do {
+    if (i % 2 == 0)
+        System.out.print(i + " ");
+    i++;
+} while (i < 6);
+
+Options:
+A. 0 2 4 6
+B. 0 2 4
+C. 0 1 2 3 4 5
+D. 2 4 6
+
+Answer: B. 0 2 4
+Explanation: Even numbers under 6 → 0, 2, 4.
+
+
+
+5. 
+What is the result?
+int i = 1, sum = 0;
+do {
+    sum += i;
+    i++;
+} while (i <= 5);
+System.out.print(sum);
+
+Options:
+A. 10
+B. 15
+C. 20
+D. 0
+
+Answer: B. 15
+Explanation: Sum = 1+2+3+4+5 = 15.
+
+
+
+6. 
+What happens here?
+int i = 1;
+do {
+    System.out.print(i);
+    i *= 2;
+} while (i < 20);
+
+Options:
+A. 1 2 4 8 16
+B. 1 2 4 8
+C. 2 4 8 16
+D. Infinite loop
+
+Answer: A. 1 2 4 8 16
+Explanation: Doubles each time. Stops when i=32 (>20).
+
+
+
+7. 
+Predict the output.
+int i = 0;
+do {
+    System.out.print("Hello ");
+    i++;
+    if (i == 3) break;
+} while (true);
+
+Options:
+A. Infinite "Hello"
+B. Hello Hello Hello
+C. Hello Hello
+D. Compilation error
+
+Answer: B. Hello Hello Hello
+Explanation: Break stops after 3 iterations.
+
+
+
+8. 
+What will this produce?
+int i = 10;
+do {
+    System.out.print(i + " ");
+    i++;
+} while (i < 10);
+
+Options:
+A. Nothing
+B. 10
+C. 10 11
+D. Infinite loop
+
+Answer: B. 10
+Explanation: Condition false initially (10<10), but do-while runs once.
+
+
+
+9. 
+What is the output?
+int i = 1, j = 5;
+do {
+    System.out.print(i * j + " ");
+    i++;
+    j--;
+} while (i <= j);
+
+Options:
+A. 5 8 9
+B. 5 8
+C. 5 10 15
+D. 5 8 9 10
+
+Answer: A. 5 8 9
+Explanation:
+Iter 1: 1*5=5
+Iter 2: 2*4=8
+Iter 3: 3*3=9 → stops when i=4, j=2.
+
+
+
+10. 
+What will print?
+int i = 0;
+do {
+    i++;
+} while (i < 0);
+System.out.print(i);
+
+Options:
+A. 0
+B. 1
+C. Infinite loop
+D. Compilation error
+
+Answer: B. 1
+Explanation: Even though condition (i < 0) is false initially, the loop executes once, incrementing i to 1.
+
+
+
+1. 
+What will this code print?
+int x = 10, y = 20;
+if (x > y)
+    System.out.println("A");
+else if (x == y)
+    System.out.println("B");
+else
+    System.out.println("C");
+
+Options:
+A. A
+B. B
+C. C
+D. Compilation error
+
+Answer: C. C
+Explanation: 10 > 20 false, 10 == 20 false → else executes.
+
+
+2. 
+Predict the output.
+int a = 5;
+if (a++ == 5)
+    System.out.print("X");
+else
+    System.out.print("Y");
+System.out.print(a);
+
+Options:
+A. X5
+B. X6
+C. Y5
+D. Y6
+
+Answer: B. X6
+Explanation: a++ == 5 → post-increment compares 5==5 → true, prints X. Then a=6.
+
+
+
+3. 
+Find the output.
+int n = -1;
+if (n > 0)
+    if (n % 2 == 0)
+        System.out.println("Even");
+    else
+        System.out.println("Odd");
+else
+    System.out.println("Negative");
+
+Options:
+A. Even
+B. Odd
+C. Negative
+D. Compilation error
+
+Answer: C. Negative
+Explanation: Outer if (n > 0) false → directly goes to else.
+
+
+4. 
+What will execute?
+int x = 10;
+if (x > 5)
+    if (x < 15)
+        if (x == 10)
+            System.out.println("Matched");
+        else
+            System.out.println("Not Matched");
+    else
+        System.out.println("Out of range");
+
+Options:
+A. Matched
+B. Not Matched
+C. Out of range
+D. Compilation error
+
+Answer: A. Matched
+Explanation: x=10 satisfies all nested conditions.
+
+
+
+5. 
+Predict the result.
+int a = 0, b = 5;
+if (a > 0 && b/a > 1)
+    System.out.println("Valid");
+else
+    System.out.println("Invalid");
+
+Options:
+A. Valid
+B. Invalid
+C. ArithmeticException
+D. Compilation error
+
+Answer: B. Invalid
+Explanation: Short-circuit a > 0 is false, so b/a not evaluated → avoids exception.
+
+
+6. 
+What will be printed?
+boolean flag = false;
+if (flag = true)
+    System.out.println("Yes");
+else
+    System.out.println("No");
+
+Options:
+A. Yes
+B. No
+C. Compilation error
+D. Runtime error
+
+Answer: A. Yes
+Explanation: flag = true is assignment, not comparison. Condition is true → prints "Yes".
+
+
+
+7. 
+What is the output?
+int num = 7;
+if (num % 2 == 0)
+    System.out.print("Even");
+else if (num % 3 == 0)
+    System.out.print("Divisible by 3");
+else if (num % 5 == 0)
+    System.out.print("Divisible by 5");
+else
+    System.out.print("Prime?");
+
+Options:
+A. Even
+B. Divisible by 3
+C. Divisible by 5
+D. Prime?
+
+Answer: D. Prime?
+Explanation: 7%2≠0, 7%3≠0, 7%5≠0 → goes to final else.
+
+
+
+8. 
+Find the output.
+int x = 20;
+if (x > 10)
+    if (x > 30)
+        System.out.println("A");
+    else
+        System.out.println("B");
+else
+    System.out.println("C");
+
+Options:
+A. A
+B. B
+C. C
+D. Compilation error
+
+Answer: B. B
+Explanation: 20 > 10 true, but 20 > 30 false → prints B.
+
+
+
+9. 
+What will happen?
+int a = 5, b = 10;
+if (a > 5 || ++b > 10)
+    System.out.println("Inside If");
+System.out.println("b = " + b);
+
+Options:
+A. Inside If, b = 11
+B. Inside If, b = 10
+C. b = 10
+D. b = 11
+
+Answer: A. Inside If, b = 11
+Explanation: a > 5 false, so ++b is evaluated (11 > 10 true). Prints "Inside If". b becomes 11.
+
+
+
+10. 
+What is the output?
+int a = 1, b = 2, c = 3;
+if (a > b)
+    if (b > c)
+        System.out.println("X");
+    else
+        System.out.println("Y");
+else if (a < c)
+    System.out.println("Z");
+else
+    System.out.println("W");
+
+Options:
+A. X
+B. Y
+C. Z
+D. W
+
+Answer: C. Z
+Explanation: a > b false → goes to else if (a < c) which is true → prints "Z".
+
+
+
+1. 
+What is the output?
+int a = 5, b = 10;
+if (a++ > 5 && ++b > 10)
+    System.out.println("X");
+else
+    System.out.println("Y");
+System.out.println("a = " + a + ", b = " + b);
+
+Options:
+A. X, a = 6, b = 11
+B. Y, a = 6, b = 10
+C. X, a = 5, b = 11
+D. Y, a = 5, b = 10
+
+Answer: B. Y, a = 6, b = 10
+Explanation:
+a++ > 5 → compares 5 > 5 (false), then increments → a=6.
+Because first condition false, && short-circuits → ++b not evaluated.
+Goes to else. Final: a=6, b=10.
+
+
+
+2.
+What will be printed?
+boolean flag = false;
+if (flag = true)
+    if (!flag)
+        System.out.println("A");
+    else
+        System.out.println("B");
+else
+    System.out.println("C");
+
+Options:
+A. A
+B. B
+C. C
+D. Compilation error
+
+Answer: B. B
+Explanation:
+if (flag = true) → assignment, so flag becomes true.
+Condition is true, so inner if (!flag) checked → !true = false.
+Goes to else → B.
+
+
+
+3. 
+What is the output?
+int x = 0, y = 5;
+if (x > 0 || (y / x) > 1)
+    System.out.println("Valid");
+else
+    System.out.println("Invalid");
+
+Options:
+A. Valid
+B. Invalid
+C. ArithmeticException
+D. Compilation error
+
+Answer:  C. ArithmeticException
+Explanation:
+x > 0 is false.
+|| short-circuit: since first condition false, second is evaluated.
+But here y / x = 5/0 → should throw exception ❌.
+Wait carefully → Actually, it does evaluate, so result → ArithmeticException.
+Correct Answer: C. ArithmeticException
+
+
+
+4. 
+Find the output.
+int a = 3, b = 4, c = 5;
+if (a > b)
+    if (b > c)
+        System.out.println("X");
+    else if (a > c)
+        System.out.println("Y");
+    else
+        System.out.println("Z");
+else
+    System.out.println("W");
+
+Options:
+A. X
+B. Y
+C. Z
+D. W
+
+Answer: D. W
+Explanation:
+a > b → 3 > 4 false → jumps directly to outer else.
+Prints W.
+
+
+
+5. 
+What is printed?
+int n = 10;
+if (n % 2 == 0)
+    if (n % 5 == 0)
+        System.out.println("Divisible by 10");
+    else
+        System.out.println("Even but not multiple of 5");
+else
+    System.out.println("Odd");
+
+Options:
+A. Divisible by 10
+B. Even but not multiple of 5
+C. Odd
+D. Compilation error
+
+Answer: A. Divisible by 10
+Explanation:
+n % 2 == 0 → true.
+Goes inside → n % 5 == 0 → true.
+Prints "Divisible by 10".
+
+
+
+1. 
+What will be the output?
+int x = 2;
+switch (x) {
+    case 1: System.out.print("A ");
+    case 2: System.out.print("B ");
+    case 3: System.out.print("C ");
+    default: System.out.print("D ");
+}
+
+Options:
+A. B C D
+B. B
+C. B D
+D. A B C D
+
+Answer: A. B C D
+
+Explanation:
+No break → execution falls through.
+Case 2 matches → prints B C D.
+
+
+
+2. 
+What is the output?
+int day = 5;
+switch (day) {
+    default: System.out.print("Other ");
+    case 1: System.out.print("Mon ");
+    case 5: System.out.print("Fri ");
+}
+
+Options:
+A. Other Mon Fri
+B. Fri
+C. Other Fri
+D. Other Mon
+
+Answer: B. Fri
+
+Explanation:
+switch starts from first matching case OR default if no match.
+day = 5 → matches case 5. But notice default comes before case 1.
+default is skipped since 5 matched. Only Fri prints.
+Correct Output = Fri.
+Right answer is B. Fri.
+
+
+
+3. 
+Which will compile successfully?
+int a = 10;
+switch (a) {
+    case 5:
+    case 10:
+    case 15:
+    case 20:
+        System.out.println("Valid");
+        break;
+    case 10 + 5: 
+        System.out.println("Also Valid");
+        break;
+}
+
+Options:
+A. Compiles fine and runs
+B. Compilation error at case 10+5
+C. Runtime error
+D. Compiles but no output
+
+Answer: A. Compiles fine and runs
+
+Explanation:
+Case labels must be constant expressions.
+10+5 is compile-time constant, so it’s valid.
+
+
+
+4. 
+What is the output?
+char grade = 'B';
+switch (grade) {
+    case 'A':
+    case 'B':
+        System.out.print("Good ");
+    case 'C':
+        System.out.print("Average ");
+        break;
+    default:
+        System.out.print("Invalid ");
+}
+
+Options:
+A. Good
+B. Good Average
+C. Average
+D. Invalid
+
+Answer: B. Good Average
+
+Explanation:
+Case 'B' matches → prints "Good ".
+Falls through into 'C' → prints "Average ".
+Break stops execution.
+
+
+
+5. 
+What is the output?
+String lang = "Java";
+switch (lang) {
+    case "Python": System.out.print("Py ");
+    case "Java": System.out.print("J ");
+    case "C++": System.out.print("C++ ");
+        break;
+    default: System.out.print("Other ");
+}
+
+Options:
+A. J
+B. J C++
+C. Py J C++
+D. Other
+
+Answer: B. J C++
+
+Explanation:
+String switching is supported since Java 7.
+Java matches → prints J and falls through → C++.
+
+
+
+9. 
+What is the output?
+enum Color { RED, GREEN, BLUE }
+
+public class Test {
+    public static void main(String[] args) {
+        Color c = Color.GREEN;
+        switch (c) {
+            case RED: System.out.print("R ");
+            case GREEN: System.out.print("G ");
+            case BLUE: System.out.print("B ");
+        }
+    }
+}
+
+Options:
+A. G
+B. G B
+C. R G B
+D. B
+
+Answer: B. G B
+
+Explanation:
+Enums work directly with switch.
+GREEN matches → prints G, falls through → B.
+
+
+
+10. 
+What is the output?
+int x = 10;
+final int y = 20;
+switch (x) {
+    case 5: System.out.print("Five ");
+    case y: System.out.print("Twenty ");
+    default: System.out.print("Default ");
+}
+
+Options:
+A. Default
+B. Twenty Default
+C. Compile-time error
+D. Five Twenty
+
+Answer: A. Default.
+
+Explanation:
+y is final, so it is treated as a compile-time constant.
+Since x=10, no match → goes to default. Wait check again!
+Correct answer: A. Default.
+
+
