@@ -1,0 +1,59 @@
+Q1.
+Write a program to insert data in ArrayList and and search the the given data-
+
+
+input-1
+4
+abc
+aa
+bc
+aa
+
+
+output-1
+abc aa bc
+aa is present in List.
+
+
+input-2
+3
+abc
+aa
+bc
+dc
+
+output-2
+abc aa bc
+dc is not present in List.
+
+
+
+
+Q2.
+Write a program to insert data in HashSet and and search the the given data-
+
+input-1
+4
+abc
+aa
+bc
+aa
+
+
+output-1
+abc aa bc
+aa is present in Set.
+
+
+input-2
+3
+abc
+aa
+bc
+dc
+
+output-2
+abc aa bc
+dc is not present in Set.
+
+
